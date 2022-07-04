@@ -1,5 +1,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.all;
+use ieee.std_logic_textio.all;
 use std.textio.all;
 use ieee.numeric_std.all;
 
@@ -21,11 +22,12 @@ component alarme is
 end component;
 
     -- Declaracao dos sinais usados no tb
-    signal senha_correta	: std_logic;
-    signal enter : std_logic := '0';
-    signal intrusao, disparo, ativado : std_logic;
-    signal clk : std_logic := '0';
-    signal rst : std_logic := '0';
+    signal senha_correta_in : std_logic;
+    signal enter_in : std_logic;
+    signal intrusao_in : std_logic;
+    signal disparo, ativado : std_logic;
+    signal clk : std_logic;
+    signal rst : std_logic;
     signal state_flag : std_logic_vector(2 downto 0);
 
     -- Flags de I/O
@@ -44,9 +46,9 @@ end component;
 begin
     -- Instancia da UUT, no caso, o alarme de alarme.vhd
 instancia_alarme : alarme 
-    port map(senha_correta  =>  senha_correta, 
-            enter           =>  enter, 
-            intrusao        =>  intrusao, 
+    port map(enter           =>  enter_in, 
+            senha_correta  =>  senha_correta_in, 
+            intrusao        =>  intrusao_in, 
             disparo         =>  disparo, 
             ativado         =>  ativado, 
             CLOCK           =>  clk, 
@@ -67,4 +69,61 @@ instancia_alarme : alarme
         end loop CLOCK_LOOP;
     end process;
     
+------------------------------------------------------------------------------------
+----------------- processo para gerar os estimulos de entrada
+------------------------------------------------------------------------------------
+-- Seta a flag 'read_data_in' para um durante entre os instantes (OFFSET+3*PERIOD)
+-- e  
+-- tb_stimulus : process
+-- begin
+--     wait for (OFFSET + 3*PERIOD);
+--     read_data_in <= '1';		
+
+--     for i in 1 to 4 loop
+--         wait for PERIOD;
+--     end loop;
+
+--     read_data_in <= '0';		
+--     wait;
+-- end process tb_stimulus;	
+
+------------------------------------------------------------------------------------
+----------------- processo para ler os dados do arquivo data_in.txt
+------------------------------------------------------------------------------------
+read_inputs_data_in:process
+		variable linea : line;
+		variable input : std_logic;
+	
+    begin
+        -- readline(inputs_data_in, linea);    -- le a primeira linha e ignora
+        wait until falling_edge(clk);       -- espera a borda de descida do clock
+        while not endfile(inputs_data_in) loop
+                    readline(inputs_data_in, linea);   -- guarda a linha na var 'linea'
+                    read(linea,input);   -- le o bit do enter
+                    enter_in <= input; 
+                    read(linea,input);   -- le o bit do senha_correta
+                    senha_correta_in <= input; 
+                    read(linea,input);   -- le o bit da intrusao
+                    intrusao_in <= input; 
+			    wait for PERIOD;    -- espera um periodo de clock antes de ler outra linha
+        end loop;
+		wait;
+	end process read_inputs_data_in;	
+    
+------------------------------------------------------------------------------------
+----------------- processo para gerar o estimulo de reset
+------------------------------------------------------------------------------------		
+    -- sreset: process
+    -- begin
+    --     rst <= '1';
+    --     -- Espera 4 subidas de clock e 
+    --     for i in 1 to 4 loop
+    --         wait until rising_edge(clk);
+    --     end loop;
+    --     rst <= '0'; 
+    --     wait;	
+    -- end process sreset;
+
+
+
 end teste;

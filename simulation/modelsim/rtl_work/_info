@@ -1,0 +1,97 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/LSD-Final/simulation/modelsim
+Ealarme
+Z1 w1656787514
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 0
+R0
+Z4 8C:/LSD-Final/alarme.vhd
+Z5 FC:/LSD-Final/alarme.vhd
+l0
+L10 1
+VOTPgEoGQCKR]UPCW[UVO<0
+!s100 eRz3_2JHd2CEbQFU8L]e@0
+Z6 OV;C;2020.1;71
+31
+Z7 !s110 1656941639
+!i10b 1
+Z8 !s108 1656941639.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/LSD-Final/alarme.vhd|
+Z10 !s107 C:/LSD-Final/alarme.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Aarch
+R2
+R3
+DEx4 work 6 alarme 0 22 OTPgEoGQCKR]UPCW[UVO<0
+!i122 0
+l24
+L21 99
+V:lR8PVC@I>EZ0Vc5o?Kkc1
+!s100 ^`FEfij2NgY:6j0Kg]jI?1
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Etb_alarme
+Z13 w1656941589
+Z14 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z15 DPx4 ieee 16 std_logic_textio 0 22 ^l:n6VFdg74Q?CKDhjD]D3
+R2
+R3
+!i122 1
+R0
+Z16 8C:/LSD-Final/tb_alarme.vhd
+Z17 FC:/LSD-Final/tb_alarme.vhd
+l0
+L7 1
+V1j@fOA>i;[DKLl<;I9;;23
+!s100 C]FkjQnRG2;F3Fh]]l=Pc1
+R6
+31
+R7
+!i10b 1
+R8
+Z18 !s90 -reportprogress|300|-93|-work|work|C:/LSD-Final/tb_alarme.vhd|
+!s107 C:/LSD-Final/tb_alarme.vhd|
+!i113 1
+R11
+R12
+Ateste
+R14
+R15
+R2
+R3
+DEx4 work 9 tb_alarme 0 22 1j@fOA>i;[DKLl<;I9;;23
+!i122 1
+l46
+L10 120
+VQDD17HCPV7?[`H_c68hRa2
+!s100 `4FX`I[=Gme<PQnb;i<2=1
+R6
+31
+R7
+!i10b 1
+R8
+R18
+Z19 !s107 C:/LSD-Final/tb_alarme.vhd|
+!i113 1
+R11
+R12
