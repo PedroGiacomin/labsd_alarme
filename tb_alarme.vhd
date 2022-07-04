@@ -70,24 +70,6 @@ instancia_alarme : alarme
     end process;
     
 ------------------------------------------------------------------------------------
------------------ processo para gerar os estimulos de entrada
-------------------------------------------------------------------------------------
--- Seta a flag 'read_data_in' para um durante entre os instantes (OFFSET+3*PERIOD)
--- e  
--- tb_stimulus : process
--- begin
---     wait for (OFFSET + 3*PERIOD);
---     read_data_in <= '1';		
-
---     for i in 1 to 4 loop
---         wait for PERIOD;
---     end loop;
-
---     read_data_in <= '0';		
---     wait;
--- end process tb_stimulus;	
-
-------------------------------------------------------------------------------------
 ----------------- processo para ler os dados do arquivo data_in.txt
 ------------------------------------------------------------------------------------
 read_inputs_data_in:process
@@ -107,7 +89,6 @@ read_inputs_data_in:process
                     intrusao_in <= input; 
 			    wait for PERIOD;    -- espera um periodo de clock antes de ler outra linha
         end loop;
-		wait;
 	end process read_inputs_data_in;	
     
 ------------------------------------------------------------------------------------
