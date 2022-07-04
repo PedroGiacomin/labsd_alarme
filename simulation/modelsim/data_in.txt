@@ -1,23 +1,24 @@
-000
-100
-000
-100
-100
-000
-110
-000
-100
-000
-100
-001
-000
-100
-000
-100
-000
-100
-110
-100
-110
-100
-110
+# enter senha_correta intrusao
+000 # erra senha ao ao armar
+100 |
+000 |
+100 | 
+100 # acerta senha ao armar
+000 |
+110 |
+000 |
+100 # erra senha ao desarmar
+000 |
+100 |
+001 # intrusao
+000 |
+100 # erra senha ao desarmar disparado
+000 |
+100 |
+000 |
+100 # acerta senha ao desarmar disparado
+110 |
+100 # acerta senha ao desarmar
+110 |
+100 |
+110 |

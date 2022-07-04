@@ -77,7 +77,7 @@ read_inputs_data_in:process
 		variable input : std_logic;
 	
     begin
-        -- readline(inputs_data_in, linea);    -- le a primeira linha e ignora
+        readline(inputs_data_in, linea);    -- le a primeira linha e ignora
         wait until falling_edge(clk);       -- espera a borda de descida do clock
         while not endfile(inputs_data_in) loop
                     readline(inputs_data_in, linea);   -- guarda a linha na var 'linea'
