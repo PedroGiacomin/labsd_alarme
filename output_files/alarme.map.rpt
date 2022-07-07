@@ -1,5 +1,5 @@
 Analysis & Synthesis report for alarme
-Mon Jul 04 10:30:47 2022
+Thu Jul 07 15:14:21 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -44,16 +44,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Jul 04 10:30:47 2022       ;
+; Analysis & Synthesis Status        ; Successful - Thu Jul 07 15:14:21 2022       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; alarme                                      ;
 ; Top-level Entity Name              ; alarme                                      ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 13                                          ;
-;     Total combinational functions  ; 11                                          ;
+; Total logic elements               ; 14                                          ;
+;     Total combinational functions  ; 12                                          ;
 ;     Dedicated logic registers      ; 6                                           ;
 ; Total registers                    ; 6                                           ;
-; Total pins                         ; 10                                          ;
+; Total pins                         ; 13                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -172,6 +172,7 @@ https://fpgasoftware.intel.com/eula.
 ; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path ; Library ;
 +----------------------------------+-----------------+-----------------+------------------------------+---------+
 ; alarme.vhd                       ; yes             ; User VHDL File  ; C:/LSD-Final/alarme.vhd      ;         ;
+; comparador.vhd                   ; yes             ; User VHDL File  ; C:/LSD-Final/comparador.vhd  ;         ;
 +----------------------------------+-----------------+-----------------+------------------------------+---------+
 
 
@@ -180,30 +181,30 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 13          ;
+; Estimated Total logic elements              ; 14          ;
 ;                                             ;             ;
-; Total combinational functions               ; 11          ;
+; Total combinational functions               ; 12          ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 5           ;
+;     -- 4 input functions                    ; 6           ;
 ;     -- 3 input functions                    ; 2           ;
 ;     -- <=2 input functions                  ; 4           ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 11          ;
+;     -- normal mode                          ; 12          ;
 ;     -- arithmetic mode                      ; 0           ;
 ;                                             ;             ;
 ; Total registers                             ; 6           ;
 ;     -- Dedicated logic registers            ; 6           ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
-; I/O pins                                    ; 10          ;
+; I/O pins                                    ; 13          ;
 ;                                             ;             ;
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; enter~input ;
 ; Maximum fan-out                             ; 8           ;
-; Total fan-out                               ; 69          ;
-; Average fan-out                             ; 1.86        ;
+; Total fan-out                               ; 76          ;
+; Average fan-out                             ; 1.73        ;
 +---------------------------------------------+-------------+
 
 
@@ -212,7 +213,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
-; |alarme                    ; 11 (11)             ; 6 (6)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 10   ; 0            ; 0          ; |alarme             ; alarme      ; work         ;
+; |alarme                    ; 12 (12)             ; 6 (6)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 13   ; 0            ; 0          ; |alarme             ; alarme      ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -252,19 +253,19 @@ Encoding Type:  One-Hot
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 10                          ;
+; boundary_port         ; 13                          ;
 ; cycloneiii_ff         ; 6                           ;
 ;     CLR               ; 3                           ;
 ;     ENA CLR           ; 3                           ;
-; cycloneiii_lcell_comb ; 13                          ;
-;     normal            ; 13                          ;
+; cycloneiii_lcell_comb ; 14                          ;
+;     normal            ; 14                          ;
 ;         1 data inputs ; 3                           ;
 ;         2 data inputs ; 3                           ;
 ;         3 data inputs ; 2                           ;
-;         4 data inputs ; 5                           ;
+;         4 data inputs ; 6                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.71                        ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 2.07                        ;
 +-----------------------+-----------------------------+
 
 
@@ -283,41 +284,45 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Mon Jul 04 10:30:38 2022
+    Info: Processing started: Thu Jul 07 15:14:12 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off alarme -c alarme
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file alarme.vhd
-    Info (12022): Found design unit 1: alarme-arch File: C:/LSD-Final/alarme.vhd Line: 21
-    Info (12023): Found entity 1: alarme File: C:/LSD-Final/alarme.vhd Line: 10
+    Info (12022): Found design unit 1: alarme-arch File: C:/LSD-Final/alarme.vhd Line: 23
+    Info (12023): Found entity 1: alarme File: C:/LSD-Final/alarme.vhd Line: 12
 Info (12021): Found 2 design units, including 1 entities, in source file tb_alarme.vhd
     Info (12022): Found design unit 1: tb_alarme-teste File: C:/LSD-Final/tb_alarme.vhd Line: 10
     Info (12023): Found entity 1: tb_alarme File: C:/LSD-Final/tb_alarme.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file comparador.vhd
+    Info (12022): Found design unit 1: comparador-RTL File: C:/LSD-Final/comparador.vhd Line: 11
+    Info (12023): Found entity 1: comparador File: C:/LSD-Final/comparador.vhd Line: 4
 Info (12127): Elaborating entity "alarme" for the top level hierarchy
-Warning (10631): VHDL Process Statement warning at alarme.vhd(27): inferring latch(es) for signal or variable "s_prox", which holds its previous value in one or more paths through the process File: C:/LSD-Final/alarme.vhd Line: 27
-Info (10041): Inferred latch for "s_prox.desarmar_disparo" at alarme.vhd(27) File: C:/LSD-Final/alarme.vhd Line: 27
-Info (10041): Inferred latch for "s_prox.disparar" at alarme.vhd(27) File: C:/LSD-Final/alarme.vhd Line: 27
-Info (10041): Inferred latch for "s_prox.senha_desarmar" at alarme.vhd(27) File: C:/LSD-Final/alarme.vhd Line: 27
-Info (10041): Inferred latch for "s_prox.ativar" at alarme.vhd(27) File: C:/LSD-Final/alarme.vhd Line: 27
-Info (10041): Inferred latch for "s_prox.senha_armar" at alarme.vhd(27) File: C:/LSD-Final/alarme.vhd Line: 27
-Info (10041): Inferred latch for "s_prox.desativado" at alarme.vhd(27) File: C:/LSD-Final/alarme.vhd Line: 27
-Warning (14026): LATCH primitive "s_prox.disparar_173" is permanently enabled File: C:/LSD-Final/alarme.vhd Line: 27
-Warning (14026): LATCH primitive "s_prox.desarmar_disparo_160" is permanently enabled File: C:/LSD-Final/alarme.vhd Line: 27
-Warning (14026): LATCH primitive "s_prox.senha_desarmar_186" is permanently enabled File: C:/LSD-Final/alarme.vhd Line: 27
-Warning (14026): LATCH primitive "s_prox.ativar_199" is permanently enabled File: C:/LSD-Final/alarme.vhd Line: 27
-Warning (14026): LATCH primitive "s_prox.senha_armar_212" is permanently enabled File: C:/LSD-Final/alarme.vhd Line: 27
-Warning (14026): LATCH primitive "s_prox.desativado_225" is permanently enabled File: C:/LSD-Final/alarme.vhd Line: 27
+Warning (10631): VHDL Process Statement warning at alarme.vhd(40): inferring latch(es) for signal or variable "s_prox", which holds its previous value in one or more paths through the process File: C:/LSD-Final/alarme.vhd Line: 40
+Info (10041): Inferred latch for "s_prox.desarmar_disparo" at alarme.vhd(40) File: C:/LSD-Final/alarme.vhd Line: 40
+Info (10041): Inferred latch for "s_prox.disparar" at alarme.vhd(40) File: C:/LSD-Final/alarme.vhd Line: 40
+Info (10041): Inferred latch for "s_prox.senha_desarmar" at alarme.vhd(40) File: C:/LSD-Final/alarme.vhd Line: 40
+Info (10041): Inferred latch for "s_prox.ativar" at alarme.vhd(40) File: C:/LSD-Final/alarme.vhd Line: 40
+Info (10041): Inferred latch for "s_prox.senha_armar" at alarme.vhd(40) File: C:/LSD-Final/alarme.vhd Line: 40
+Info (10041): Inferred latch for "s_prox.desativado" at alarme.vhd(40) File: C:/LSD-Final/alarme.vhd Line: 40
+Info (12128): Elaborating entity "comparador" for hierarchy "comparador:compara_senha" File: C:/LSD-Final/alarme.vhd Line: 37
+Warning (14026): LATCH primitive "s_prox.disparar_177" is permanently enabled File: C:/LSD-Final/alarme.vhd Line: 40
+Warning (14026): LATCH primitive "s_prox.desarmar_disparo_164" is permanently enabled File: C:/LSD-Final/alarme.vhd Line: 40
+Warning (14026): LATCH primitive "s_prox.senha_desarmar_190" is permanently enabled File: C:/LSD-Final/alarme.vhd Line: 40
+Warning (14026): LATCH primitive "s_prox.ativar_203" is permanently enabled File: C:/LSD-Final/alarme.vhd Line: 40
+Warning (14026): LATCH primitive "s_prox.senha_armar_216" is permanently enabled File: C:/LSD-Final/alarme.vhd Line: 40
+Warning (14026): LATCH primitive "s_prox.desativado_229" is permanently enabled File: C:/LSD-Final/alarme.vhd Line: 40
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 23 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 5 input pins
+Info (21057): Implemented 27 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 8 input pins
     Info (21059): Implemented 5 output pins
-    Info (21061): Implemented 13 logic cells
+    Info (21061): Implemented 14 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 4784 megabytes
-    Info: Processing ended: Mon Jul 04 10:30:47 2022
+    Info: Peak virtual memory: 4774 megabytes
+    Info: Processing ended: Thu Jul 07 15:14:21 2022
     Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:18
+    Info: Total CPU time (on all processors): 00:00:21
 
 

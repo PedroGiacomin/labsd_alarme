@@ -25,10 +25,10 @@ end component;
     signal senha_correta_in : std_logic;
     signal enter_in : std_logic;
     signal intrusao_in : std_logic;
-    signal disparo, ativado : std_logic;
+    signal disparo_out, ativado_out : std_logic;
     signal clk : std_logic;
     signal rst : std_logic;
-    signal state_flag : std_logic_vector(2 downto 0);
+    signal state_flag_out : std_logic_vector(2 downto 0);
 
     -- Flags de I/O
     signal read_data_in    : std_logic:='0';
@@ -49,11 +49,11 @@ instancia_alarme : alarme
     port map(enter           =>  enter_in, 
             senha_correta  =>  senha_correta_in, 
             intrusao        =>  intrusao_in, 
-            disparo         =>  disparo, 
-            ativado         =>  ativado, 
+            disparo         =>  disparo_out, 
+            ativado         =>  ativado_out, 
             CLOCK           =>  clk, 
             RESET           =>  rst, 
-            state_flag      =>  state_flag);
+            state_flag      =>  state_flag_out);
 
 ------------------------------------------------------------------------------------
 ----------------- processo para gerar o sinal de clock 
@@ -91,6 +91,27 @@ read_inputs_data_in:process
         end loop;
 	end process read_inputs_data_in;	
     
+----------------------------------------------------------------------------------
+------ processo para escrever os dados de saida no arquivo .txt
+------------------------------------------------------------------------------------   
+   
+-- write_outputs:process
+-- 		variable linea  : line;
+-- 		variable output : std_logic_vector (31 downto 0);
+-- 	begin
+-- 	    wait until clk ='0';
+-- 		while true loop
+-- 			if (flag_write ='1')then
+-- 				output := q_ortonorma;
+-- 				write(linea,output);
+-- 				writeline(outputs,linea);
+-- 			end if;
+-- 			wait for PERIOD;
+-- 		end loop; 
+-- 	end process write_outputs;   	
+-- END;
+
+
 ------------------------------------------------------------------------------------
 ----------------- processo para gerar o estimulo de reset
 ------------------------------------------------------------------------------------		

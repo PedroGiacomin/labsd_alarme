@@ -1,0 +1,137 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/LSD-Final/simulation/modelsim
+Ealarme
+Z1 w1656941464
+Z2 DPx11 fiftyfivenm 21 fiftyfivenm_atom_pack 0 22 ]LY<>e3?`4Wb8dl1GV_X90
+Z3 DPx11 fiftyfivenm 22 fiftyfivenm_components 0 22 `f]nQdYHZLbCG_>oYeZOo2
+Z4 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z5 DPx6 altera 11 dffeas_pack 0 22 H5F:RRfLz82T3`4>@b7mS3
+Z6 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z7 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z8 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+Z9 DPx6 altera 28 altera_primitives_components 0 22 VSD=32;3391kSOd?PDZYj3
+!i122 0
+R0
+Z10 8alarme.vho
+Z11 Falarme.vho
+l0
+L91 1
+VPg:X_kSUUSY`?VOEkhhck0
+!s100 LIzi7kGmI=nnT1n@zCQcE3
+Z12 OV;C;2020.1;71
+31
+Z13 !s110 1657195647
+!i10b 1
+Z14 !s108 1657195646.000000
+Z15 !s90 -reportprogress|300|-93|-work|work|alarme.vho|
+Z16 !s107 alarme.vho|
+!i113 1
+Z17 o-93 -work work
+Z18 tExplicit 1 CvgOpt 0
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+DEx4 work 6 alarme 0 22 Pg:X_kSUUSY`?VOEkhhck0
+!i122 0
+l183
+L117 607
+V5Jk?;N_4=SE1PZmnZ>m2G2
+!s100 A@T_hgo?L=oMXX6I1XBSF1
+R12
+31
+R13
+!i10b 1
+R14
+R15
+R16
+!i113 1
+R17
+R18
+Ehard_block
+R1
+R4
+R2
+R6
+R7
+R8
+R3
+!i122 0
+R0
+R10
+R11
+l0
+L35 1
+VH73DDHU2ac^:D?]T;@N=M3
+!s100 3A]XnMhF<;9mKUe5mn3aM1
+R12
+31
+Z19 !s110 1657195646
+!i10b 1
+R14
+R15
+R16
+!i113 1
+R17
+R18
+Astructure
+R4
+R2
+R6
+R7
+R8
+R3
+DEx4 work 10 hard_block 0 22 H73DDHU2ac^:D?]T;@N=M3
+!i122 0
+l76
+L54 28
+V:9n9ma92JRcO^oG6nb?k`2
+!s100 >:Wi^nX[YiN=@>>JC6K_83
+R12
+31
+R19
+!i10b 1
+R14
+R15
+R16
+!i113 1
+R17
+R18
+Etb_alarme
+w1656943538
+DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+DPx4 ieee 16 std_logic_textio 0 22 ^l:n6VFdg74Q?CKDhjD]D3
+R7
+R8
+!i122 1
+R0
+8C:/LSD-Final/tb_alarme.vhd
+FC:/LSD-Final/tb_alarme.vhd
+l0
+L7 1
+V1j@fOA>i;[DKLl<;I9;;23
+!s100 C]FkjQnRG2;F3Fh]]l=Pc1
+R12
+31
+R13
+!i10b 1
+!s108 1657195647.000000
+!s90 -reportprogress|300|-93|-work|work|C:/LSD-Final/tb_alarme.vhd|
+!s107 C:/LSD-Final/tb_alarme.vhd|
+!i113 1
+R17
+R18

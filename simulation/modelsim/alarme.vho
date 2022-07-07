@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition"
 
--- DATE "07/04/2022 10:31:04"
+-- DATE "07/07/2022 15:14:40"
 
 -- 
 -- Device: Altera 10M50DAF484C7G Package FBGA484
@@ -92,24 +92,27 @@ ENTITY 	alarme IS
     PORT (
 	RESET : IN std_logic;
 	CLOCK : IN std_logic;
-	senha_correta : IN std_logic;
+	senha : IN std_logic_vector(3 DOWNTO 0);
 	enter : IN std_logic;
 	intrusao : IN std_logic;
-	disparo : BUFFER std_logic;
-	ativado : BUFFER std_logic;
-	state_flag : BUFFER std_logic_vector(2 DOWNTO 0)
+	disparo : OUT std_logic;
+	ativado : OUT std_logic;
+	state_flag : OUT std_logic_vector(2 DOWNTO 0)
 	);
 END alarme;
 
 -- Design Ports Information
--- disparo	=>  Location: PIN_E8,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- disparo	=>  Location: PIN_D6,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- ativado	=>  Location: PIN_F7,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- state_flag[0]	=>  Location: PIN_B5,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- state_flag[1]	=>  Location: PIN_B3,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- state_flag[2]	=>  Location: PIN_C4,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- intrusao	=>  Location: PIN_B4,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- enter	=>  Location: PIN_A2,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- senha_correta	=>  Location: PIN_A3,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- state_flag[0]	=>  Location: PIN_C4,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- state_flag[1]	=>  Location: PIN_E8,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- state_flag[2]	=>  Location: PIN_B1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- intrusao	=>  Location: PIN_C5,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- enter	=>  Location: PIN_A3,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- senha[0]	=>  Location: PIN_B5,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- senha[1]	=>  Location: PIN_B4,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- senha[3]	=>  Location: PIN_A2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- senha[2]	=>  Location: PIN_B3,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- CLOCK	=>  Location: PIN_M8,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- RESET	=>  Location: PIN_M9,	 I/O Standard: 2.5 V,	 Current Strength: Default
 
@@ -126,7 +129,7 @@ SIGNAL ww_devclrn : std_logic;
 SIGNAL ww_devpor : std_logic;
 SIGNAL ww_RESET : std_logic;
 SIGNAL ww_CLOCK : std_logic;
-SIGNAL ww_senha_correta : std_logic;
+SIGNAL ww_senha : std_logic_vector(3 DOWNTO 0);
 SIGNAL ww_enter : std_logic;
 SIGNAL ww_intrusao : std_logic;
 SIGNAL ww_disparo : std_logic;
@@ -147,8 +150,12 @@ SIGNAL \state_flag[1]~output_o\ : std_logic;
 SIGNAL \state_flag[2]~output_o\ : std_logic;
 SIGNAL \CLOCK~input_o\ : std_logic;
 SIGNAL \CLOCK~inputclkctrl_outclk\ : std_logic;
-SIGNAL \senha_correta~input_o\ : std_logic;
 SIGNAL \enter~input_o\ : std_logic;
+SIGNAL \senha[1]~input_o\ : std_logic;
+SIGNAL \senha[2]~input_o\ : std_logic;
+SIGNAL \senha[3]~input_o\ : std_logic;
+SIGNAL \senha[0]~input_o\ : std_logic;
+SIGNAL \process_0~0_combout\ : std_logic;
 SIGNAL \intrusao~input_o\ : std_logic;
 SIGNAL \RESET~input_o\ : std_logic;
 SIGNAL \RESET~inputclkctrl_outclk\ : std_logic;
@@ -184,7 +191,7 @@ BEGIN
 
 ww_RESET <= RESET;
 ww_CLOCK <= CLOCK;
-ww_senha_correta <= senha_correta;
+ww_senha <= senha;
 ww_enter <= enter;
 ww_intrusao <= intrusao;
 disparo <= ww_disparo;
@@ -210,7 +217,7 @@ PORT MAP (
 	devclrn => ww_devclrn,
 	devpor => ww_devpor);
 
--- Location: LCCOMB_X44_Y41_N24
+-- Location: LCCOMB_X44_Y43_N16
 \~QUARTUS_CREATED_GND~I\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \~QUARTUS_CREATED_GND~I_combout\ = GND
@@ -223,7 +230,7 @@ GENERIC MAP (
 PORT MAP (
 	combout => \~QUARTUS_CREATED_GND~I_combout\);
 
--- Location: IOOBUF_X24_Y39_N9
+-- Location: IOOBUF_X22_Y39_N30
 \disparo~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -247,7 +254,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \ativado~output_o\);
 
--- Location: IOOBUF_X26_Y39_N30
+-- Location: IOOBUF_X24_Y39_N2
 \state_flag[0]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -259,7 +266,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \state_flag[0]~output_o\);
 
--- Location: IOOBUF_X26_Y39_N16
+-- Location: IOOBUF_X24_Y39_N9
 \state_flag[1]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -271,7 +278,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \state_flag[1]~output_o\);
 
--- Location: IOOBUF_X24_Y39_N2
+-- Location: IOOBUF_X22_Y39_N23
 \state_flag[2]~output\ : fiftyfivenm_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -309,18 +316,6 @@ PORT MAP (
 	outclk => \CLOCK~inputclkctrl_outclk\);
 
 -- Location: IOIBUF_X26_Y39_N8
-\senha_correta~input\ : fiftyfivenm_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	listen_to_nsleep_signal => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_senha_correta,
-	o => \senha_correta~input_o\);
-
--- Location: IOIBUF_X26_Y39_N1
 \enter~input\ : fiftyfivenm_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -333,6 +328,71 @@ PORT MAP (
 	o => \enter~input_o\);
 
 -- Location: IOIBUF_X26_Y39_N22
+\senha[1]~input\ : fiftyfivenm_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	listen_to_nsleep_signal => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_senha(1),
+	o => \senha[1]~input_o\);
+
+-- Location: IOIBUF_X26_Y39_N15
+\senha[2]~input\ : fiftyfivenm_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	listen_to_nsleep_signal => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_senha(2),
+	o => \senha[2]~input_o\);
+
+-- Location: IOIBUF_X26_Y39_N1
+\senha[3]~input\ : fiftyfivenm_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	listen_to_nsleep_signal => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_senha(3),
+	o => \senha[3]~input_o\);
+
+-- Location: IOIBUF_X26_Y39_N29
+\senha[0]~input\ : fiftyfivenm_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	listen_to_nsleep_signal => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_senha(0),
+	o => \senha[0]~input_o\);
+
+-- Location: LCCOMB_X26_Y36_N24
+\process_0~0\ : fiftyfivenm_lcell_comb
+-- Equation(s):
+-- \process_0~0_combout\ = (\senha[1]~input_o\ & (!\senha[2]~input_o\ & (\senha[3]~input_o\ & \senha[0]~input_o\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0010000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \senha[1]~input_o\,
+	datab => \senha[2]~input_o\,
+	datac => \senha[3]~input_o\,
+	datad => \senha[0]~input_o\,
+	combout => \process_0~0_combout\);
+
+-- Location: IOIBUF_X24_Y39_N22
 \intrusao~input\ : fiftyfivenm_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -369,7 +429,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	outclk => \RESET~inputclkctrl_outclk\);
 
--- Location: FF_X26_Y38_N31
+-- Location: FF_X25_Y36_N11
 \s_atual.senha_desarmar\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -386,24 +446,24 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \s_atual.senha_desarmar~q\);
 
--- Location: LCCOMB_X26_Y38_N6
+-- Location: LCCOMB_X25_Y36_N6
 \Selector9~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \Selector9~0_combout\ = (\senha_correta~input_o\ & ((\s_atual.desarmar_disparo~q\) # ((\s_atual.senha_desarmar~q\)))) # (!\senha_correta~input_o\ & (((\s_atual.senha_armar~q\))))
+-- \Selector9~0_combout\ = (\process_0~0_combout\ & ((\s_atual.desarmar_disparo~q\) # ((\s_atual.senha_desarmar~q\)))) # (!\process_0~0_combout\ & (((\s_atual.senha_armar~q\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111101111001000",
+	lut_mask => "1111110010111000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \s_atual.desarmar_disparo~q\,
-	datab => \senha_correta~input_o\,
-	datac => \s_atual.senha_desarmar~q\,
-	datad => \s_atual.senha_armar~q\,
+	datab => \process_0~0_combout\,
+	datac => \s_atual.senha_armar~q\,
+	datad => \s_atual.senha_desarmar~q\,
 	combout => \Selector9~0_combout\);
 
--- Location: LCCOMB_X26_Y38_N20
+-- Location: LCCOMB_X25_Y36_N20
 \Selector9~1\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \Selector9~1_combout\ = (\enter~input_o\ & ((!\Selector9~0_combout\))) # (!\enter~input_o\ & (\s_atual.desativado~q\))
@@ -419,7 +479,7 @@ PORT MAP (
 	datad => \Selector9~0_combout\,
 	combout => \Selector9~1_combout\);
 
--- Location: FF_X26_Y38_N21
+-- Location: FF_X25_Y36_N21
 \s_atual.desativado\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -434,7 +494,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \s_atual.desativado~q\);
 
--- Location: LCCOMB_X26_Y38_N18
+-- Location: LCCOMB_X25_Y36_N30
 \s_atual.senha_armar~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \s_atual.senha_armar~0_combout\ = !\s_atual.desativado~q\
@@ -448,7 +508,7 @@ PORT MAP (
 	datad => \s_atual.desativado~q\,
 	combout => \s_atual.senha_armar~0_combout\);
 
--- Location: FF_X26_Y38_N19
+-- Location: FF_X25_Y36_N31
 \s_atual.senha_armar\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -464,24 +524,24 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \s_atual.senha_armar~q\);
 
--- Location: LCCOMB_X26_Y38_N12
+-- Location: LCCOMB_X25_Y36_N12
 \Selector5~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \Selector5~0_combout\ = (\enter~input_o\ & ((\senha_correta~input_o\ & ((\s_atual.senha_armar~q\))) # (!\senha_correta~input_o\ & (\s_atual.senha_desarmar~q\))))
+-- \Selector5~0_combout\ = (\enter~input_o\ & ((\process_0~0_combout\ & (\s_atual.senha_armar~q\)) # (!\process_0~0_combout\ & ((\s_atual.senha_desarmar~q\)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010100000100000",
+	lut_mask => "1010001010000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \enter~input_o\,
-	datab => \senha_correta~input_o\,
-	datac => \s_atual.senha_desarmar~q\,
-	datad => \s_atual.senha_armar~q\,
+	datab => \process_0~0_combout\,
+	datac => \s_atual.senha_armar~q\,
+	datad => \s_atual.senha_desarmar~q\,
 	combout => \Selector5~0_combout\);
 
--- Location: LCCOMB_X26_Y38_N4
+-- Location: LCCOMB_X25_Y36_N8
 \Selector5~1\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \Selector5~1_combout\ = (\Selector5~0_combout\) # ((!\enter~input_o\ & (!\intrusao~input_o\ & \s_atual.ativar~q\)))
@@ -498,7 +558,7 @@ PORT MAP (
 	datad => \Selector5~0_combout\,
 	combout => \Selector5~1_combout\);
 
--- Location: FF_X26_Y38_N5
+-- Location: FF_X25_Y36_N9
 \s_atual.ativar\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -513,7 +573,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \s_atual.ativar~q\);
 
--- Location: LCCOMB_X26_Y38_N16
+-- Location: LCCOMB_X25_Y36_N24
 \Selector2~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \Selector2~0_combout\ = (!\enter~input_o\ & ((\s_atual.disparar~q\) # ((\intrusao~input_o\ & \s_atual.ativar~q\))))
@@ -530,10 +590,10 @@ PORT MAP (
 	datad => \s_atual.disparar~q\,
 	combout => \Selector2~0_combout\);
 
--- Location: LCCOMB_X26_Y38_N28
+-- Location: LCCOMB_X25_Y36_N16
 \Selector2~1\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \Selector2~1_combout\ = (\Selector2~0_combout\) # ((\s_atual.desarmar_disparo~q\ & (!\senha_correta~input_o\ & \enter~input_o\)))
+-- \Selector2~1_combout\ = (\Selector2~0_combout\) # ((\enter~input_o\ & (!\process_0~0_combout\ & \s_atual.desarmar_disparo~q\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -541,13 +601,13 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \s_atual.desarmar_disparo~q\,
-	datab => \senha_correta~input_o\,
-	datac => \enter~input_o\,
+	dataa => \enter~input_o\,
+	datab => \process_0~0_combout\,
+	datac => \s_atual.desarmar_disparo~q\,
 	datad => \Selector2~0_combout\,
 	combout => \Selector2~1_combout\);
 
--- Location: FF_X26_Y38_N29
+-- Location: FF_X25_Y36_N17
 \s_atual.disparar\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -562,7 +622,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \s_atual.disparar~q\);
 
--- Location: FF_X26_Y38_N23
+-- Location: FF_X25_Y36_N27
 \s_atual.desarmar_disparo\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -579,7 +639,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \s_atual.desarmar_disparo~q\);
 
--- Location: LCCOMB_X26_Y38_N24
+-- Location: LCCOMB_X25_Y36_N28
 \disparo~2\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \disparo~2_combout\ = (\s_atual.desarmar_disparo~q\) # (\s_atual.disparar~q\)
@@ -594,22 +654,22 @@ PORT MAP (
 	datac => \s_atual.disparar~q\,
 	combout => \disparo~2_combout\);
 
--- Location: LCCOMB_X26_Y38_N30
+-- Location: LCCOMB_X25_Y36_N10
 \ativado~2\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \ativado~2_combout\ = (\s_atual.senha_armar~q\) # (!\s_atual.desativado~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100110011111111",
+	lut_mask => "1010101011111111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \s_atual.senha_armar~q\,
+	dataa => \s_atual.senha_armar~q\,
 	datad => \s_atual.desativado~q\,
 	combout => \ativado~2_combout\);
 
--- Location: LCCOMB_X26_Y38_N22
+-- Location: LCCOMB_X25_Y36_N26
 \WideOr0~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \WideOr0~0_combout\ = (\s_atual.ativar~q\) # ((\s_atual.disparar~q\) # (!\s_atual.desativado~q\))
@@ -625,19 +685,19 @@ PORT MAP (
 	datad => \s_atual.desativado~q\,
 	combout => \WideOr0~0_combout\);
 
--- Location: LCCOMB_X26_Y38_N26
+-- Location: LCCOMB_X25_Y36_N22
 \state_flag~2\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \state_flag~2_combout\ = (\s_atual.senha_desarmar~q\) # (\s_atual.ativar~q\)
+-- \state_flag~2_combout\ = (\s_atual.ativar~q\) # (\s_atual.senha_desarmar~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111111110000",
+	lut_mask => "1111111110101010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \s_atual.senha_desarmar~q\,
-	datad => \s_atual.ativar~q\,
+	dataa => \s_atual.ativar~q\,
+	datad => \s_atual.senha_desarmar~q\,
 	combout => \state_flag~2_combout\);
 
 -- Location: UNVM_X0_Y40_N40

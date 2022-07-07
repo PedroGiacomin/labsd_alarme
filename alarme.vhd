@@ -7,23 +7,36 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
+-- Falta implementar o decodificador de senha e acoplar ele na placa
+
 entity alarme is
     port (
         RESET   : in    std_logic; -- reset input
         CLOCK   : in    std_logic; -- clock input
-        senha_correta   	: in    std_logic; -- sinal de senha_correta
+        senha   : in    std_logic_vector(3 downto 0);
         enter, intrusao 	: in    std_logic; -- sinais de entrada externos
         disparo, ativado	: out   std_logic;  -- sinais de saida externos
-		  state_flag			: out	  std_logic_vector(2 downto 0)	-- flag de estado
+		state_flag			: out	  std_logic_vector(2 downto 0)	-- flag de estado
     );
 end alarme;
 
 architecture arch of alarme is
+
+    component comparador is
+        port(
+            senha_in	: in	std_logic_vector(3 downto 0);
+            senha_correta_out	:	out std_logic
+        );
+    end component;
+	 signal senha_correta  :  std_logic; -- sinal de senha_correta
+
 	type state_type is (desativado, senha_armar, ativar, senha_desarmar, disparar, desarmar_disparo);
 	signal s_atual, s_prox : state_type;
-begin
 
-	-- PROCESS DA FSM
+    begin
+    compara_senha   :   comparador  port map (senha_correta_out =>  senha_correta, senha_in => senha);
+
+    -- PROCESS DA FSM
 	process (enter, senha_correta, s_atual, intrusao)
 		begin
 			case s_atual is
