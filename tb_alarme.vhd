@@ -14,15 +14,15 @@ component alarme is
     port (
         RESET   : in    std_logic; -- reset input
         CLOCK   : in    std_logic; -- clock input
-        senha_correta   	: in    std_logic; -- sinal de senha_correta
+        senha   : in    std_logic_vector(3 downto 0); -- sinal de senha
         enter, intrusao 	: in    std_logic; -- sinais de entrada externos
         disparo, ativado	: out   std_logic;  -- sinais de saida externos
-		state_flag			: out   std_logic_vector(2 downto 0)
+		state_flag			: out   std_logic_vector(2 downto 0)	
 	 );
 end component;
 
     -- Declaracao dos sinais usados no tb
-    signal senha_correta_in : std_logic;
+    signal senha_in  : std_logic_vector(3 downto 0);
     signal enter_in : std_logic;
     signal intrusao_in : std_logic;
     signal disparo_out, ativado_out : std_logic;
@@ -46,8 +46,8 @@ end component;
 begin
     -- Instancia da UUT, no caso, o alarme de alarme.vhd
 instancia_alarme : alarme 
-    port map(enter           =>  enter_in, 
-            senha_correta  =>  senha_correta_in, 
+    port map(enter          =>  enter_in, 
+            senha           =>  senha_in, 
             intrusao        =>  intrusao_in, 
             disparo         =>  disparo_out, 
             ativado         =>  ativado_out, 
@@ -75,6 +75,7 @@ instancia_alarme : alarme
 read_inputs_data_in:process
 		variable linea : line;
 		variable input : std_logic;
+        variable input_vector   :   std_logic_vector(3 downto 0);
 	
     begin
         readline(inputs_data_in, linea);    -- le a primeira linha e ignora
@@ -83,8 +84,8 @@ read_inputs_data_in:process
                     readline(inputs_data_in, linea);   -- guarda a linha na var 'linea'
                     read(linea,input);   -- le o bit do enter
                     enter_in <= input; 
-                    read(linea,input);   -- le o bit do senha_correta
-                    senha_correta_in <= input; 
+                    read(linea,input_vector);   -- le o bit do senha_correta
+                    senha_in <= input_vector; 
                     read(linea,input);   -- le o bit da intrusao
                     intrusao_in <= input; 
 			    wait for PERIOD;    -- espera um periodo de clock antes de ler outra linha

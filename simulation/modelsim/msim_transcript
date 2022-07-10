@@ -12,19 +12,30 @@
 # 
 # vcom -93 -work work {C:/LSD-Final/alarme.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:45:30 on Jul 07,2022
+# Start time: 16:11:45 on Jul 10,2022
 # vcom -reportprogress 300 -93 -work work C:/LSD-Final/alarme.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity alarme
 # -- Compiling architecture arch of alarme
-# End time: 14:45:30 on Jul 07,2022, Elapsed time: 0:00:00
+# End time: 16:11:45 on Jul 10,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/LSD-Final/comparador.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:11:45 on Jul 10,2022
+# vcom -reportprogress 300 -93 -work work C:/LSD-Final/comparador.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity comparador
+# -- Compiling architecture RTL of comparador
+# End time: 16:11:45 on Jul 10,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vcom -93 -work work {C:/LSD-Final/tb_alarme.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:45:30 on Jul 07,2022
+# Start time: 16:11:45 on Jul 10,2022
 # vcom -reportprogress 300 -93 -work work C:/LSD-Final/tb_alarme.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -33,12 +44,12 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity tb_alarme
 # -- Compiling architecture teste of tb_alarme
-# End time: 14:45:30 on Jul 07,2022, Elapsed time: 0:00:00
+# End time: 16:11:45 on Jul 10,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L fiftyfivenm -L rtl_work -L work -voptargs="+acc"  tb_alarme
 # vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L fiftyfivenm -L rtl_work -L work -voptargs=""+acc"" tb_alarme 
-# Start time: 14:45:30 on Jul 07,2022
+# Start time: 16:11:45 on Jul 10,2022
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -46,6 +57,7 @@
 # Loading ieee.numeric_std(body)
 # Loading work.tb_alarme(teste)
 # Loading work.alarme(arch)
+# Loading work.comparador(rtl)
 # 
 # add wave *
 # view structure
@@ -55,10 +67,11 @@
 # run -all
 # ** Fatal: (vsim-3551) TEXTIO : Read past end of file "data_in.txt".
 #    Time: 485 ns  Iteration: 0  Process: /tb_alarme/read_inputs_data_in File: C:/LSD-Final/tb_alarme.vhd
-# Fatal error in Process read_inputs_data_in at C:/LSD-Final/tb_alarme.vhd line 80
+# Fatal error in Process read_inputs_data_in at C:/LSD-Final/tb_alarme.vhd line 81
 # 
 # HDL call sequence:
-# Stopped at C:/LSD-Final/tb_alarme.vhd 80 Process read_inputs_data_in
+# Stopped at C:/LSD-Final/tb_alarme.vhd 81 Process read_inputs_data_in
 # 
-# End time: 15:05:56 on Jul 07,2022, Elapsed time: 0:20:26
+add wave -position end  sim:/tb_alarme/instancia_alarme/s_atual
+# End time: 16:24:23 on Jul 10,2022, Elapsed time: 0:12:38
 # Errors: 1, Warnings: 0

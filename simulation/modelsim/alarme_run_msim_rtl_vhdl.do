@@ -6,6 +6,7 @@ vlib rtl_work
 vmap work rtl_work
 
 vcom -93 -work work {C:/LSD-Final/alarme.vhd}
+vcom -93 -work work {C:/LSD-Final/comparador.vhd}
 
 vcom -93 -work work {C:/LSD-Final/tb_alarme.vhd}
 

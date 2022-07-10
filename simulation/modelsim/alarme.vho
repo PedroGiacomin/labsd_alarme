@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition"
 
--- DATE "07/07/2022 15:14:40"
+-- DATE "07/10/2022 16:11:35"
 
 -- 
 -- Device: Altera 10M50DAF484C7G Package FBGA484
@@ -95,9 +95,9 @@ ENTITY 	alarme IS
 	senha : IN std_logic_vector(3 DOWNTO 0);
 	enter : IN std_logic;
 	intrusao : IN std_logic;
-	disparo : OUT std_logic;
-	ativado : OUT std_logic;
-	state_flag : OUT std_logic_vector(2 DOWNTO 0)
+	disparo : BUFFER std_logic;
+	ativado : BUFFER std_logic;
+	state_flag : BUFFER std_logic_vector(2 DOWNTO 0)
 	);
 END alarme;
 
