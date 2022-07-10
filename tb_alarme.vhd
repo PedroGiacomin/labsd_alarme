@@ -96,22 +96,25 @@ read_inputs_data_in:process
 ------ processo para escrever os dados de saida no arquivo .txt
 ------------------------------------------------------------------------------------   
    
--- write_outputs:process
--- 		variable linea  : line;
--- 		variable output : std_logic_vector (31 downto 0);
--- 	begin
--- 	    wait until clk ='0';
--- 		while true loop
--- 			if (flag_write ='1')then
--- 				output := q_ortonorma;
--- 				write(linea,output);
--- 				writeline(outputs,linea);
--- 			end if;
--- 			wait for PERIOD;
--- 		end loop; 
--- 	end process write_outputs;   	
--- END;
-
+write_outputs:process
+	    variable linea  : line;
+        variable output :   std_logic;
+		variable output_vector : std_logic_vector(2 downto 0);  
+	begin
+        write(linea,string'("#ativado disparo state_flag"));
+        writeline(outputs,linea);
+	    wait until clk ='0';
+		while true loop
+				output := ativado_out;
+				write(linea,output);
+                output := disparo_out;
+				write(linea,output,right, 15);
+                output_vector := state_flag_out;
+				write(linea,output_vector,right, 15);
+				writeline(outputs,linea);
+			wait for PERIOD;
+		end loop; 
+	end process write_outputs;   	
 
 ------------------------------------------------------------------------------------
 ----------------- processo para gerar o estimulo de reset
@@ -126,7 +129,5 @@ read_inputs_data_in:process
     --     rst <= '0'; 
     --     wait;	
     -- end process sreset;
-
-
 
 end teste;
