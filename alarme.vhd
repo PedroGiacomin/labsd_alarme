@@ -57,9 +57,9 @@ architecture arch of alarme is
 					disparo <= '0';
 					ativado <= '0';
 					state_flag <= "001";
-					if (enter = '1') and (senha_correta = '1') then
+					if enter = '1' and senha_correta = '1' then
 						s_prox <= ativar;
-					elsif (enter = '1' and senha_correta = '0') then
+					elsif enter = '1' and senha_correta = '0' then
 						s_prox <= desativado;
 					else 
 						s_prox <= senha_armar;
@@ -70,11 +70,11 @@ architecture arch of alarme is
 					disparo <= '0';
 					ativado <= '1';
 					state_flag <= "010";
-					if (enter = '1') then
+					if enter = '1' then
 						s_prox <= senha_desarmar;
-					elsif (intrusao = '0' and enter = '0') then
+					elsif intrusao = '0' and enter = '0' then
 						s_prox <= ativar;
-					elsif (intrusao = '1' and enter = '0') then
+					elsif intrusao = '1' and enter = '0' then
 						s_prox <= disparar;
 					end if;
 					
@@ -83,9 +83,9 @@ architecture arch of alarme is
 					disparo <= '0';
 					ativado <= '1';
 					state_flag <= "011";
-					if (enter = '1' and senha_correta = '1') then
+					if enter = '1' and senha_correta = '1' then
 						s_prox <= desativado;
-					elsif (enter = '1' and senha_correta = '0') then
+					elsif enter = '1' and senha_correta = '0' then
 						s_prox <= ativar;
 					else 
 						s_prox <= senha_desarmar;
@@ -96,7 +96,7 @@ architecture arch of alarme is
 					disparo <= '1';
 					ativado <= '1';
 					state_flag <= "100";
-					if (enter = '1') then
+					if enter = '1' then
 						s_prox <= desarmar_disparo;
 					else
 						s_prox <= disparar;
@@ -107,9 +107,9 @@ architecture arch of alarme is
 					disparo <= '1';
 					ativado <= '1';
 					state_flag <= "101";
-					if (enter = '1' and senha_correta = '1') then
+					if enter = '1' and senha_correta = '1' then
 						s_prox <= desativado;
-					elsif (enter = '1' and senha_correta = '0') then
+					elsif enter = '1' and senha_correta = '0' then
 						s_prox <= disparar;
 					else 
 						s_prox <= desarmar_disparo;
