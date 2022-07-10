@@ -28,7 +28,7 @@ architecture arch of alarme is
             senha_correta_out	:	out std_logic
         );
     end component;
-	 signal senha_correta  :  std_logic; -- sinal de senha_correta
+	signal senha_correta  :  std_logic; -- sinal de senha_correta
 
 	type state_type is (desativado, senha_armar, ativar, senha_desarmar, disparar, desarmar_disparo);
 	signal s_atual, s_prox : state_type;

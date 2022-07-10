@@ -1,24 +1,24 @@
-# enter senha_correta intrusao
-000000 # erra senha ao ao armar
-100000 |
-000000 |
-100000 | 
-100000 # acerta senha ao armar
-000000 |
-110110 |
-000000 |
-100000 # erra senha ao desarmar
-000000 |
-100000 |
-000001 # intrusao
-000000 |
-100000 # erra senha ao desarmar disparado
-000000 |
-100000 |
-000000 |
-000000 # acerta senha ao desarmar disparado
-110110 |
-100000 # acerta senha ao desarmar
-110110 |
-100000 |
-110110 |
+# enter senha intrusao
+0 0000 0 # erra senha ao armar
+1 0000 0 |
+0 0000 0 |
+1 0000 0 | 
+1 0000 0 # acerta senha ao armar
+0 0000 0 |
+1 1011 0 |
+0 0000 0 |
+1 0000 0 # erra senha ao desarmar
+0 0000 0 |
+1 0000 0 |
+0 0000 1 # intrusao
+0 0000 0 |
+1 0000 0 # erra senha ao desarmar disparado
+0 0000 0 |
+1 0000 0 |
+0 0000 0 |
+1 0000 0 # acerta senha ao desarmar disparado
+1 1011 0 |
+1 0000 0 # acerta senha ao desarmar
+1 1011 0 |
+1 0000 0 |
+1 1011 0 |

@@ -75,6 +75,7 @@ instancia_alarme : alarme
 read_inputs_data_in:process
 		variable linea : line;
 		variable input : std_logic;
+        variable v_space    : character;
         variable input_vector   :   std_logic_vector(3 downto 0);
 	
     begin
@@ -84,8 +85,10 @@ read_inputs_data_in:process
                     readline(inputs_data_in, linea);   -- guarda a linha na var 'linea'
                     read(linea,input);   -- le o bit do enter
                     enter_in <= input; 
+                    read(linea, v_SPACE);
                     read(linea,input_vector);   -- le o bit do senha_correta
                     senha_in <= input_vector; 
+                    read(linea, v_SPACE);
                     read(linea,input);   -- le o bit da intrusao
                     intrusao_in <= input; 
 			    wait for PERIOD;    -- espera um periodo de clock antes de ler outra linha
@@ -101,16 +104,16 @@ write_outputs:process
         variable output :   std_logic;
 		variable output_vector : std_logic_vector(2 downto 0);  
 	begin
-        write(linea,string'("#ativado disparo state_flag"));
+        write(linea,string'("ativado disparo state_flag"));
         writeline(outputs,linea);
-	    wait until clk ='0';
+	    wait until falling_edge(clk);       -- espera a borda de descida do clock
 		while true loop
 				output := ativado_out;
 				write(linea,output);
                 output := disparo_out;
-				write(linea,output,right, 15);
+				write(linea,output,right, 10);
                 output_vector := state_flag_out;
-				write(linea,output_vector,right, 15);
+				write(linea,output_vector,right, 10);
 				writeline(outputs,linea);
 			wait for PERIOD;
 		end loop; 
