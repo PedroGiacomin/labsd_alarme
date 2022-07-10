@@ -1,5 +1,5 @@
 Analysis & Synthesis report for alarme
-Sun Jul 10 18:11:46 2022
+Sun Jul 10 19:14:26 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -44,7 +44,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Jul 10 18:11:46 2022       ;
+; Analysis & Synthesis Status        ; Successful - Sun Jul 10 19:14:26 2022       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; alarme                                      ;
 ; Top-level Entity Name              ; alarme                                      ;
@@ -284,7 +284,7 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sun Jul 10 18:11:37 2022
+    Info: Processing started: Sun Jul 10 19:14:18 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off alarme -c alarme
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -298,20 +298,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file compara
     Info (12022): Found design unit 1: comparador-RTL File: C:/LSD-Final/comparador.vhd Line: 11
     Info (12023): Found entity 1: comparador File: C:/LSD-Final/comparador.vhd Line: 4
 Info (12127): Elaborating entity "alarme" for the top level hierarchy
-Warning (10631): VHDL Process Statement warning at alarme.vhd(40): inferring latch(es) for signal or variable "s_prox", which holds its previous value in one or more paths through the process File: C:/LSD-Final/alarme.vhd Line: 40
-Info (10041): Inferred latch for "s_prox.desarmar_disparo" at alarme.vhd(40) File: C:/LSD-Final/alarme.vhd Line: 40
-Info (10041): Inferred latch for "s_prox.disparar" at alarme.vhd(40) File: C:/LSD-Final/alarme.vhd Line: 40
-Info (10041): Inferred latch for "s_prox.senha_desarmar" at alarme.vhd(40) File: C:/LSD-Final/alarme.vhd Line: 40
-Info (10041): Inferred latch for "s_prox.ativar" at alarme.vhd(40) File: C:/LSD-Final/alarme.vhd Line: 40
-Info (10041): Inferred latch for "s_prox.senha_armar" at alarme.vhd(40) File: C:/LSD-Final/alarme.vhd Line: 40
-Info (10041): Inferred latch for "s_prox.desativado" at alarme.vhd(40) File: C:/LSD-Final/alarme.vhd Line: 40
 Info (12128): Elaborating entity "comparador" for hierarchy "comparador:compara_senha" File: C:/LSD-Final/alarme.vhd Line: 37
-Warning (14026): LATCH primitive "s_prox.disparar_177" is permanently enabled File: C:/LSD-Final/alarme.vhd Line: 40
-Warning (14026): LATCH primitive "s_prox.desarmar_disparo_164" is permanently enabled File: C:/LSD-Final/alarme.vhd Line: 40
-Warning (14026): LATCH primitive "s_prox.senha_desarmar_190" is permanently enabled File: C:/LSD-Final/alarme.vhd Line: 40
-Warning (14026): LATCH primitive "s_prox.ativar_203" is permanently enabled File: C:/LSD-Final/alarme.vhd Line: 40
-Warning (14026): LATCH primitive "s_prox.senha_armar_216" is permanently enabled File: C:/LSD-Final/alarme.vhd Line: 40
-Warning (14026): LATCH primitive "s_prox.desativado_229" is permanently enabled File: C:/LSD-Final/alarme.vhd Line: 40
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -319,10 +306,10 @@ Info (21057): Implemented 27 device resources after synthesis - the final resour
     Info (21058): Implemented 8 input pins
     Info (21059): Implemented 5 output pins
     Info (21061): Implemented 14 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 4782 megabytes
-    Info: Processing ended: Sun Jul 10 18:11:46 2022
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:20
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4776 megabytes
+    Info: Processing ended: Sun Jul 10 19:14:26 2022
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:19
 
 

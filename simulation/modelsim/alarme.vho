@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition"
 
--- DATE "07/10/2022 18:12:02"
+-- DATE "07/10/2022 19:14:43"
 
 -- 
 -- Device: Altera 10M50DAF484C7G Package FBGA484
@@ -160,16 +160,16 @@ SIGNAL \intrusao~input_o\ : std_logic;
 SIGNAL \RESET~input_o\ : std_logic;
 SIGNAL \RESET~inputclkctrl_outclk\ : std_logic;
 SIGNAL \s_atual.senha_desarmar~q\ : std_logic;
-SIGNAL \Selector9~0_combout\ : std_logic;
-SIGNAL \Selector9~1_combout\ : std_logic;
+SIGNAL \Selector0~0_combout\ : std_logic;
+SIGNAL \Selector0~1_combout\ : std_logic;
 SIGNAL \s_atual.desativado~q\ : std_logic;
 SIGNAL \s_atual.senha_armar~0_combout\ : std_logic;
 SIGNAL \s_atual.senha_armar~q\ : std_logic;
-SIGNAL \Selector5~0_combout\ : std_logic;
-SIGNAL \Selector5~1_combout\ : std_logic;
-SIGNAL \s_atual.ativar~q\ : std_logic;
 SIGNAL \Selector2~0_combout\ : std_logic;
 SIGNAL \Selector2~1_combout\ : std_logic;
+SIGNAL \s_atual.ativar~q\ : std_logic;
+SIGNAL \Selector4~0_combout\ : std_logic;
+SIGNAL \Selector4~1_combout\ : std_logic;
 SIGNAL \s_atual.disparar~q\ : std_logic;
 SIGNAL \s_atual.desarmar_disparo~q\ : std_logic;
 SIGNAL \disparo~2_combout\ : std_logic;
@@ -447,9 +447,9 @@ PORT MAP (
 	q => \s_atual.senha_desarmar~q\);
 
 -- Location: LCCOMB_X25_Y36_N6
-\Selector9~0\ : fiftyfivenm_lcell_comb
+\Selector0~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \Selector9~0_combout\ = (\process_0~0_combout\ & ((\s_atual.desarmar_disparo~q\) # ((\s_atual.senha_desarmar~q\)))) # (!\process_0~0_combout\ & (((\s_atual.senha_armar~q\))))
+-- \Selector0~0_combout\ = (\process_0~0_combout\ & ((\s_atual.desarmar_disparo~q\) # ((\s_atual.senha_desarmar~q\)))) # (!\process_0~0_combout\ & (((\s_atual.senha_armar~q\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -461,12 +461,12 @@ PORT MAP (
 	datab => \process_0~0_combout\,
 	datac => \s_atual.senha_armar~q\,
 	datad => \s_atual.senha_desarmar~q\,
-	combout => \Selector9~0_combout\);
+	combout => \Selector0~0_combout\);
 
 -- Location: LCCOMB_X25_Y36_N20
-\Selector9~1\ : fiftyfivenm_lcell_comb
+\Selector0~1\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \Selector9~1_combout\ = (\enter~input_o\ & ((!\Selector9~0_combout\))) # (!\enter~input_o\ & (\s_atual.desativado~q\))
+-- \Selector0~1_combout\ = (\enter~input_o\ & ((!\Selector0~0_combout\))) # (!\enter~input_o\ & (\s_atual.desativado~q\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -476,8 +476,8 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \enter~input_o\,
 	datac => \s_atual.desativado~q\,
-	datad => \Selector9~0_combout\,
-	combout => \Selector9~1_combout\);
+	datad => \Selector0~0_combout\,
+	combout => \Selector0~1_combout\);
 
 -- Location: FF_X25_Y36_N21
 \s_atual.desativado\ : dffeas
@@ -488,7 +488,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLOCK~inputclkctrl_outclk\,
-	d => \Selector9~1_combout\,
+	d => \Selector0~1_combout\,
 	clrn => \ALT_INV_RESET~inputclkctrl_outclk\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -525,9 +525,9 @@ PORT MAP (
 	q => \s_atual.senha_armar~q\);
 
 -- Location: LCCOMB_X25_Y36_N12
-\Selector5~0\ : fiftyfivenm_lcell_comb
+\Selector2~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \Selector5~0_combout\ = (\enter~input_o\ & ((\process_0~0_combout\ & (\s_atual.senha_armar~q\)) # (!\process_0~0_combout\ & ((\s_atual.senha_desarmar~q\)))))
+-- \Selector2~0_combout\ = (\enter~input_o\ & ((\process_0~0_combout\ & (\s_atual.senha_armar~q\)) # (!\process_0~0_combout\ & ((\s_atual.senha_desarmar~q\)))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -539,12 +539,12 @@ PORT MAP (
 	datab => \process_0~0_combout\,
 	datac => \s_atual.senha_armar~q\,
 	datad => \s_atual.senha_desarmar~q\,
-	combout => \Selector5~0_combout\);
+	combout => \Selector2~0_combout\);
 
 -- Location: LCCOMB_X25_Y36_N8
-\Selector5~1\ : fiftyfivenm_lcell_comb
+\Selector2~1\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \Selector5~1_combout\ = (\Selector5~0_combout\) # ((!\enter~input_o\ & (!\intrusao~input_o\ & \s_atual.ativar~q\)))
+-- \Selector2~1_combout\ = (\Selector2~0_combout\) # ((!\enter~input_o\ & (!\intrusao~input_o\ & \s_atual.ativar~q\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -555,8 +555,8 @@ PORT MAP (
 	dataa => \enter~input_o\,
 	datab => \intrusao~input_o\,
 	datac => \s_atual.ativar~q\,
-	datad => \Selector5~0_combout\,
-	combout => \Selector5~1_combout\);
+	datad => \Selector2~0_combout\,
+	combout => \Selector2~1_combout\);
 
 -- Location: FF_X25_Y36_N9
 \s_atual.ativar\ : dffeas
@@ -567,16 +567,16 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLOCK~inputclkctrl_outclk\,
-	d => \Selector5~1_combout\,
+	d => \Selector2~1_combout\,
 	clrn => \ALT_INV_RESET~inputclkctrl_outclk\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \s_atual.ativar~q\);
 
 -- Location: LCCOMB_X25_Y36_N24
-\Selector2~0\ : fiftyfivenm_lcell_comb
+\Selector4~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \Selector2~0_combout\ = (!\enter~input_o\ & ((\s_atual.disparar~q\) # ((\intrusao~input_o\ & \s_atual.ativar~q\))))
+-- \Selector4~0_combout\ = (!\enter~input_o\ & ((\s_atual.disparar~q\) # ((\intrusao~input_o\ & \s_atual.ativar~q\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -588,12 +588,12 @@ PORT MAP (
 	datab => \intrusao~input_o\,
 	datac => \s_atual.ativar~q\,
 	datad => \s_atual.disparar~q\,
-	combout => \Selector2~0_combout\);
+	combout => \Selector4~0_combout\);
 
 -- Location: LCCOMB_X25_Y36_N16
-\Selector2~1\ : fiftyfivenm_lcell_comb
+\Selector4~1\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \Selector2~1_combout\ = (\Selector2~0_combout\) # ((\enter~input_o\ & (!\process_0~0_combout\ & \s_atual.desarmar_disparo~q\)))
+-- \Selector4~1_combout\ = (\Selector4~0_combout\) # ((\enter~input_o\ & (!\process_0~0_combout\ & \s_atual.desarmar_disparo~q\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -604,8 +604,8 @@ PORT MAP (
 	dataa => \enter~input_o\,
 	datab => \process_0~0_combout\,
 	datac => \s_atual.desarmar_disparo~q\,
-	datad => \Selector2~0_combout\,
-	combout => \Selector2~1_combout\);
+	datad => \Selector4~0_combout\,
+	combout => \Selector4~1_combout\);
 
 -- Location: FF_X25_Y36_N17
 \s_atual.disparar\ : dffeas
@@ -616,7 +616,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLOCK~inputclkctrl_outclk\,
-	d => \Selector2~1_combout\,
+	d => \Selector4~1_combout\,
 	clrn => \ALT_INV_RESET~inputclkctrl_outclk\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,

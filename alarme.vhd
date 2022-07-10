@@ -76,6 +76,8 @@ architecture arch of alarme is
 						s_prox <= ativar;
 					elsif intrusao = '1' and enter = '0' then
 						s_prox <= disparar;
+                    else 
+                        s_prox <= senha_desarmar;
 					end if;
 					
 				-- S3: Estado 'senha_desarmar'
