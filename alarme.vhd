@@ -16,7 +16,7 @@ entity alarme is
         senha   : in    std_logic_vector(3 downto 0);
         enter, intrusao 	: in    std_logic;  -- sinais de entrada externos
         disparo, ativado	: out   std_logic;  -- sinais de saida externos 
-		state_flag			: out	  std_logic_vector(2 downto 0)	-- flag de estado   
+		state_flag			: out	  std_logic_vector(5 downto 0)	-- flag de estado   
     );
 end alarme;
 
@@ -54,7 +54,7 @@ architecture arch of alarme is
 				when desativado =>
 					disparo <= '0';
 					ativado <= '0';
-					state_flag <= "000";
+					state_flag <= "000001";
 					if enter = '1' then
 						s_prox <= senha_armar;
 					else
@@ -65,7 +65,7 @@ architecture arch of alarme is
 				when senha_armar =>
 					disparo <= '0';
 					ativado <= '0';
-					state_flag <= "001";
+					state_flag <= "000010";
 					if enter = '1' and senha_correta = '1' then
 						s_prox <= ativar;
 					elsif enter = '1' and senha_correta = '0' then
@@ -78,7 +78,7 @@ architecture arch of alarme is
 				when ativar =>
 					disparo <= '0';
 					ativado <= '1';
-					state_flag <= "010";
+					state_flag <= "000100";
 					if enter = '1' then
 						s_prox <= senha_desarmar;
 					elsif intrusao = '0' and enter = '0' then
@@ -93,7 +93,7 @@ architecture arch of alarme is
 				when senha_desarmar =>
 					disparo <= '0';
 					ativado <= '1';
-					state_flag <= "011";
+					state_flag <= "001000";
 					if enter = '1' and senha_correta = '1' then
 						s_prox <= desativado;
 					elsif enter = '1' and senha_correta = '0' then
@@ -106,7 +106,7 @@ architecture arch of alarme is
 				when disparar =>
 					disparo <= '1';
 					ativado <= '1';
-					state_flag <= "100";
+					state_flag <= "010000";
 					if enter = '1' then
 						s_prox <= desarmar_disparo;
 					else
@@ -117,7 +117,7 @@ architecture arch of alarme is
 				when desarmar_disparo =>
 					disparo <= '1';
 					ativado <= '1';
-					state_flag <= "101";
+					state_flag <= "100000";
 					if enter = '1' and senha_correta = '1' then
 						s_prox <= desativado;
 					elsif enter = '1' and senha_correta = '0' then

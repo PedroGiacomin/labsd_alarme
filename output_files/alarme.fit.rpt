@@ -1,5 +1,5 @@
 Fitter report for alarme
-Mon Jul 11 20:30:48 2022
+Mon Jul 11 20:38:30 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -68,18 +68,18 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Mon Jul 11 20:30:48 2022       ;
+; Fitter Status                      ; Successful - Mon Jul 11 20:38:30 2022       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; alarme                                      ;
 ; Top-level Entity Name              ; alarme                                      ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M50DAF484C7G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 44 / 49,760 ( < 1 % )                       ;
-;     Total combinational functions  ; 44 / 49,760 ( < 1 % )                       ;
+; Total logic elements               ; 42 / 49,760 ( < 1 % )                       ;
+;     Total combinational functions  ; 42 / 49,760 ( < 1 % )                       ;
 ;     Dedicated logic registers      ; 25 / 49,760 ( < 1 % )                       ;
 ; Total registers                    ; 25                                          ;
-; Total pins                         ; 13 / 360 ( 4 % )                            ;
+; Total pins                         ; 16 / 360 ( 4 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 1,677,312 ( 0 % )                       ;
 ; Embedded Multiplier 9-bit elements ; 0 / 288 ( 0 % )                             ;
@@ -159,8 +159,7 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.4%      ;
-;     Processors 3-4         ;   0.4%      ;
+;     Processors 2-4         ;   0.4%      ;
 +----------------------------+-------------+
 
 
@@ -170,8 +169,8 @@ https://fpgasoftware.intel.com/eula.
 ; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+--------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                    ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 117 ) ; 0.00 % ( 0 / 117 )         ; 0.00 % ( 0 / 117 )       ;
-;     -- Achieved     ; 0.00 % ( 0 / 117 ) ; 0.00 % ( 0 / 117 )         ; 0.00 % ( 0 / 117 )       ;
+;     -- Requested    ; 0.00 % ( 0 / 121 ) ; 0.00 % ( 0 / 121 )         ; 0.00 % ( 0 / 121 )       ;
+;     -- Achieved     ; 0.00 % ( 0 / 121 ) ; 0.00 % ( 0 / 121 )         ; 0.00 % ( 0 / 121 )       ;
 ;                     ;                    ;                            ;                          ;
 ; Routing (by net)    ;                    ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -194,7 +193,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 101 )    ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 105 )    ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 16 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -210,19 +209,19 @@ The pin-out file can be found in C:/LSD-Final/output_files/alarme.pin.
 +---------------------------------------------+-----------------------+
 ; Resource                                    ; Usage                 ;
 +---------------------------------------------+-----------------------+
-; Total logic elements                        ; 44 / 49,760 ( < 1 % ) ;
-;     -- Combinational with no register       ; 19                    ;
+; Total logic elements                        ; 42 / 49,760 ( < 1 % ) ;
+;     -- Combinational with no register       ; 17                    ;
 ;     -- Register only                        ; 0                     ;
 ;     -- Combinational with a register        ; 25                    ;
 ;                                             ;                       ;
 ; Logic element usage by number of LUT inputs ;                       ;
 ;     -- 4 input functions                    ; 19                    ;
-;     -- 3 input functions                    ; 2                     ;
-;     -- <=2 input functions                  ; 23                    ;
+;     -- 3 input functions                    ; 1                     ;
+;     -- <=2 input functions                  ; 22                    ;
 ;     -- Register only                        ; 0                     ;
 ;                                             ;                       ;
 ; Logic elements by mode                      ;                       ;
-;     -- normal mode                          ; 27                    ;
+;     -- normal mode                          ; 25                    ;
 ;     -- arithmetic mode                      ; 17                    ;
 ;                                             ;                       ;
 ; Total registers*                            ; 25 / 51,509 ( < 1 % ) ;
@@ -231,7 +230,7 @@ The pin-out file can be found in C:/LSD-Final/output_files/alarme.pin.
 ;                                             ;                       ;
 ; Total LABs:  partially or completely used   ; 4 / 3,110 ( < 1 % )   ;
 ; Virtual pins                                ; 0                     ;
-; I/O pins                                    ; 13 / 360 ( 4 % )      ;
+; I/O pins                                    ; 16 / 360 ( 4 % )      ;
 ;     -- Clock pins                           ; 1 / 8 ( 13 % )        ;
 ;     -- Dedicated input pins                 ; 1 / 1 ( 100 % )       ;
 ;                                             ;                       ;
@@ -250,11 +249,11 @@ The pin-out file can be found in C:/LSD-Final/output_files/alarme.pin.
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )         ;
 ; Impedance control blocks                    ; 0 / 1 ( 0 % )         ;
 ; Average interconnect usage (total/H/V)      ; 0.0% / 0.0% / 0.0%    ;
-; Peak interconnect usage (total/H/V)         ; 0.2% / 0.0% / 0.6%    ;
+; Peak interconnect usage (total/H/V)         ; 0.2% / 0.1% / 0.3%    ;
 ; Maximum fan-out                             ; 19                    ;
 ; Highest non-global fan-out                  ; 17                    ;
-; Total fan-out                               ; 215                   ;
-; Average fan-out                             ; 1.84                  ;
+; Total fan-out                               ; 216                   ;
+; Average fan-out                             ; 1.79                  ;
 +---------------------------------------------+-----------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -267,19 +266,19 @@ The pin-out file can be found in C:/LSD-Final/output_files/alarme.pin.
 +---------------------------------------------+----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                  ; Low                            ;
 ;                                             ;                      ;                                ;
-; Total logic elements                        ; 44 / 49760 ( < 1 % ) ; 0 / 49760 ( 0 % )              ;
-;     -- Combinational with no register       ; 19                   ; 0                              ;
+; Total logic elements                        ; 42 / 49760 ( < 1 % ) ; 0 / 49760 ( 0 % )              ;
+;     -- Combinational with no register       ; 17                   ; 0                              ;
 ;     -- Register only                        ; 0                    ; 0                              ;
 ;     -- Combinational with a register        ; 25                   ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Logic element usage by number of LUT inputs ;                      ;                                ;
 ;     -- 4 input functions                    ; 19                   ; 0                              ;
-;     -- 3 input functions                    ; 2                    ; 0                              ;
-;     -- <=2 input functions                  ; 23                   ; 0                              ;
+;     -- 3 input functions                    ; 1                    ; 0                              ;
+;     -- <=2 input functions                  ; 22                   ; 0                              ;
 ;     -- Register only                        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Logic elements by mode                      ;                      ;                                ;
-;     -- normal mode                          ; 27                   ; 0                              ;
+;     -- normal mode                          ; 25                   ; 0                              ;
 ;     -- arithmetic mode                      ; 17                   ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Total registers                             ; 25                   ; 0                              ;
@@ -289,7 +288,7 @@ The pin-out file can be found in C:/LSD-Final/output_files/alarme.pin.
 ; Total LABs:  partially or completely used   ; 4 / 3110 ( < 1 % )   ; 0 / 3110 ( 0 % )               ;
 ;                                             ;                      ;                                ;
 ; Virtual pins                                ; 0                    ; 0                              ;
-; I/O pins                                    ; 13                   ; 0                              ;
+; I/O pins                                    ; 16                   ; 0                              ;
 ; Embedded Multiplier 9-bit elements          ; 0 / 288 ( 0 % )      ; 0 / 288 ( 0 % )                ;
 ; Total memory bits                           ; 0                    ; 0                              ;
 ; Total RAM block bits                        ; 0                    ; 0                              ;
@@ -304,8 +303,8 @@ The pin-out file can be found in C:/LSD-Final/output_files/alarme.pin.
 ;     -- Registered Output Connections        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Internal Connections                        ;                      ;                                ;
-;     -- Total Connections                    ; 221                  ; 8                              ;
-;     -- Registered Connections               ; 74                   ; 0                              ;
+;     -- Total Connections                    ; 222                  ; 8                              ;
+;     -- Registered Connections               ; 75                   ; 0                              ;
 ;                                             ;                      ;                                ;
 ; External Connections                        ;                      ;                                ;
 ;     -- Top                                  ; 0                    ; 0                              ;
@@ -313,7 +312,7 @@ The pin-out file can be found in C:/LSD-Final/output_files/alarme.pin.
 ;                                             ;                      ;                                ;
 ; Partition Interface                         ;                      ;                                ;
 ;     -- Input Ports                          ; 8                    ; 0                              ;
-;     -- Output Ports                         ; 5                    ; 0                              ;
+;     -- Output Ports                         ; 8                    ; 0                              ;
 ;     -- Bidir Ports                          ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Registered Ports                            ;                      ;                                ;
@@ -338,13 +337,13 @@ The pin-out file can be found in C:/LSD-Final/output_files/alarme.pin.
 ; Name     ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination Control Block ; Location assigned by ; Slew Rate ;
 +----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 ; CLOCK    ; M8    ; 2        ; 0            ; 18           ; 14           ; 19                    ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
-; enter    ; B21   ; 6        ; 78           ; 43           ; 0            ; 8                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
-; intrusao ; B20   ; 6        ; 78           ; 44           ; 7            ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; enter    ; J8    ; 1A       ; 0            ; 36           ; 14           ; 8                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; intrusao ; J4    ; 1A       ; 0            ; 35           ; 14           ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
 ; reset    ; M9    ; 2        ; 0            ; 18           ; 21           ; 6                     ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
-; senha[0] ; J18   ; 6        ; 78           ; 42           ; 14           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
-; senha[1] ; E17   ; 6        ; 78           ; 43           ; 14           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
-; senha[2] ; F17   ; 6        ; 78           ; 43           ; 21           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
-; senha[3] ; B22   ; 6        ; 78           ; 43           ; 7            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; senha[0] ; H4    ; 1A       ; 0            ; 35           ; 0            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; senha[1] ; K6    ; 1A       ; 0            ; 34           ; 21           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; senha[2] ; G3    ; 1A       ; 0            ; 35           ; 7            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; senha[3] ; H3    ; 1A       ; 0            ; 35           ; 21           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
 +----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 
 
@@ -353,11 +352,14 @@ The pin-out file can be found in C:/LSD-Final/output_files/alarme.pin.
 +---------------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
 ; Name          ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Output Register ; Output Enable Register ; Power Up High ; Slew Rate ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Termination                       ; Termination Control Block ; Output Buffer Pre-emphasis ; Voltage Output Differential ; Location assigned by ; Output Enable Source ; Output Enable Group ;
 +---------------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
-; ativado       ; K20   ; 6        ; 78           ; 42           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; disparo       ; K18   ; 6        ; 78           ; 42           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; state_flag[0] ; J15   ; 6        ; 78           ; 44           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; state_flag[1] ; A21   ; 6        ; 78           ; 44           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; state_flag[2] ; K19   ; 6        ; 78           ; 42           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; ativado       ; E4    ; 1A       ; 0            ; 37           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; disparo       ; E3    ; 1A       ; 0            ; 37           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; state_flag[0] ; F3    ; 1A       ; 0            ; 36           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; state_flag[1] ; F4    ; 1A       ; 0            ; 37           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; state_flag[2] ; J9    ; 1A       ; 0            ; 36           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; state_flag[3] ; G4    ; 1A       ; 0            ; 36           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; state_flag[4] ; F5    ; 1A       ; 0            ; 37           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; state_flag[5] ; K5    ; 1A       ; 0            ; 34           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
 +---------------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
 
 
@@ -382,13 +384,13 @@ The pin-out file can be found in C:/LSD-Final/output_files/alarme.pin.
 +----------+------------------+---------------+--------------+
 ; I/O Bank ; Usage            ; VCCIO Voltage ; VREF Voltage ;
 +----------+------------------+---------------+--------------+
-; 1A       ; 0 / 16 ( 0 % )   ; 2.5V          ; --           ;
+; 1A       ; 14 / 16 ( 88 % ) ; 2.5V          ; --           ;
 ; 1B       ; 4 / 24 ( 17 % )  ; 2.5V          ; --           ;
 ; 2        ; 2 / 36 ( 6 % )   ; 2.5V          ; --           ;
 ; 3        ; 0 / 48 ( 0 % )   ; 2.5V          ; --           ;
 ; 4        ; 0 / 48 ( 0 % )   ; 2.5V          ; --           ;
 ; 5        ; 0 / 40 ( 0 % )   ; 2.5V          ; --           ;
-; 6        ; 11 / 60 ( 18 % ) ; 2.5V          ; --           ;
+; 6        ; 0 / 60 ( 0 % )   ; 2.5V          ; --           ;
 ; 7        ; 0 / 52 ( 0 % )   ; 2.5V          ; --           ;
 ; 8        ; 4 / 36 ( 11 % )  ; 2.5V          ; --           ;
 +----------+------------------+---------------+--------------+
@@ -419,7 +421,7 @@ The pin-out file can be found in C:/LSD-Final/output_files/alarme.pin.
 ; A18      ; 405        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; A19      ; 403        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; A20      ; 401        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
-; A21      ; 371        ; 6        ; state_flag[1]                                  ; output ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
+; A21      ; 371        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; A22      ;            ;          ; GND                                            ; gnd    ;                       ;         ; --         ;                 ; --       ; --           ;
 ; AA1      ; 133        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; AA2      ; 135        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
@@ -484,9 +486,9 @@ The pin-out file can be found in C:/LSD-Final/output_files/alarme.pin.
 ; B17      ; 402        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; B18      ;            ;          ; GND                                            ; gnd    ;                       ;         ; --         ;                 ; --       ; --           ;
 ; B19      ; 399        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
-; B20      ; 369        ; 6        ; intrusao                                       ; input  ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
-; B21      ; 367        ; 6        ; enter                                          ; input  ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
-; B22      ; 365        ; 6        ; senha[3]                                       ; input  ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
+; B20      ; 369        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
+; B21      ; 367        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
+; B22      ; 365        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; C1       ; 33         ; 1B       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; --       ; --           ;
 ; C2       ; 499        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; C3       ; 497        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
@@ -533,8 +535,8 @@ The pin-out file can be found in C:/LSD-Final/output_files/alarme.pin.
 ; D22      ; 341        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; E1       ; 41         ; 1B       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; E2       ;            ;          ; GND                                            ; gnd    ;                       ;         ; --         ;                 ; --       ; --           ;
-; E3       ; 3          ; 1A       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
-; E4       ; 1          ; 1A       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
+; E3       ; 3          ; 1A       ; disparo                                        ; output ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
+; E4       ; 1          ; 1A       ; ativado                                        ; output ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; E5       ;            ;          ; NC                                             ;        ;                       ;         ; --         ;                 ; --       ; --           ;
 ; E6       ; 498        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; E7       ;            ;          ; GND                                            ; gnd    ;                       ;         ; --         ;                 ; --       ; --           ;
@@ -547,7 +549,7 @@ The pin-out file can be found in C:/LSD-Final/output_files/alarme.pin.
 ; E14      ; 406        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; E15      ; 390        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; E16      ; 388        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
-; E17      ; 366        ; 6        ; senha[1]                                       ; input  ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
+; E17      ; 366        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; E18      ; 387        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; E19      ; 352        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; E20      ; 355        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -555,9 +557,9 @@ The pin-out file can be found in C:/LSD-Final/output_files/alarme.pin.
 ; E22      ; 333        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; F1       ; 47         ; 1B       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; F2       ; 43         ; 1B       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
-; F3       ; 7          ; 1A       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
-; F4       ; 2          ; 1A       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
-; F5       ; 0          ; 1A       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
+; F3       ; 7          ; 1A       ; state_flag[0]                                  ; output ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
+; F4       ; 2          ; 1A       ; state_flag[1]                                  ; output ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
+; F5       ; 0          ; 1A       ; state_flag[4]                                  ; output ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; F6       ;            ;          ; NC                                             ;        ;                       ;         ; --         ;                 ; --       ; --           ;
 ; F7       ; 490        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; F8       ; 494        ; 8        ; ~ALTERA_CONF_DONE~ / RESERVED_INPUT            ; input  ; 2.5 V Schmitt Trigger ;         ; Column I/O ; N               ; no       ; Off          ;
@@ -569,7 +571,7 @@ The pin-out file can be found in C:/LSD-Final/output_files/alarme.pin.
 ; F14      ;            ; 7        ; VCCIO7                                         ; power  ;                       ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; F15      ; 398        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; F16      ; 396        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
-; F17      ; 364        ; 6        ; senha[2]                                       ; input  ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
+; F17      ; 364        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; F18      ; 354        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; F19      ; 353        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; F20      ; 342        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -577,8 +579,8 @@ The pin-out file can be found in C:/LSD-Final/output_files/alarme.pin.
 ; F22      ; 331        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; G1       ; 45         ; 1B       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; G2       ; 34         ; 1B       ; ~ALTERA_TCK~ / RESERVED_INPUT                  ; input  ; 2.5 V Schmitt Trigger ;         ; Row I/O    ; N               ; no       ; Off          ;
-; G3       ; 11         ; 1A       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
-; G4       ; 5          ; 1A       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
+; G3       ; 11         ; 1A       ; senha[2]                                       ; input  ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
+; G4       ; 5          ; 1A       ; state_flag[3]                                  ; output ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; G5       ;            ;          ; ANAIN1                                         ;        ;                       ;         ; --         ;                 ; --       ; --           ;
 ; G6       ;            ;          ; GND                                            ; gnd    ;                       ;         ; --         ;                 ; --       ; --           ;
 ; G7       ;            ;          ; VCCD_PLL3                                      ; power  ;                       ; 1.2V    ; --         ;                 ; --       ; --           ;
@@ -599,8 +601,8 @@ The pin-out file can be found in C:/LSD-Final/output_files/alarme.pin.
 ; G22      ; 329        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; H1       ; 44         ; 1B       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; H2       ; 32         ; 1B       ; ~ALTERA_TMS~ / RESERVED_INPUT_WITH_WEAK_PULLUP ; input  ; 2.5 V Schmitt Trigger ;         ; Row I/O    ; N               ; no       ; On           ;
-; H3       ; 10         ; 1A       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
-; H4       ; 9          ; 1A       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
+; H3       ; 10         ; 1A       ; senha[3]                                       ; input  ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
+; H4       ; 9          ; 1A       ; senha[0]                                       ; input  ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; H5       ;            ;          ; REFGND                                         ;        ;                       ;         ; --         ;                 ; --       ; --           ;
 ; H6       ;            ;          ; ADC_VREF                                       ;        ;                       ;         ; --         ;                 ; --       ; --           ;
 ; H7       ;            ; --       ; VCCA_ADC                                       ; power  ;                       ; 2.5V    ; --         ;                 ; --       ; --           ;
@@ -622,21 +624,21 @@ The pin-out file can be found in C:/LSD-Final/output_files/alarme.pin.
 ; J1       ; 46         ; 1B       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; J2       ;            ;          ; GND                                            ; gnd    ;                       ;         ; --         ;                 ; --       ; --           ;
 ; J3       ; 15         ; 1A       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
-; J4       ; 8          ; 1A       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
+; J4       ; 8          ; 1A       ; intrusao                                       ; input  ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; J5       ;            ;          ; ANAIN2                                         ;        ;                       ;         ; --         ;                 ; --       ; --           ;
 ; J6       ;            ;          ; GND                                            ; gnd    ;                       ;         ; --         ;                 ; --       ; --           ;
 ; J7       ;            ;          ; VCCINT                                         ; power  ;                       ; 1.2V    ; --         ;                 ; --       ; --           ;
-; J8       ; 4          ; 1A       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
-; J9       ; 6          ; 1A       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
+; J8       ; 4          ; 1A       ; enter                                          ; input  ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
+; J9       ; 6          ; 1A       ; state_flag[2]                                  ; output ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; J10      ; 468        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; J11      ; 446        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; J12      ; 434        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; J13      ; 422        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; J14      ; 368        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
-; J15      ; 370        ; 6        ; state_flag[0]                                  ; output ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
+; J15      ; 370        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; J16      ;            ;          ; GND                                            ; gnd    ;                       ;         ; --         ;                 ; --       ; --           ;
 ; J17      ;            ; 6        ; VCCIO6                                         ; power  ;                       ; 2.5V    ; --         ;                 ; --       ; --           ;
-; J18      ; 362        ; 6        ; senha[0]                                       ; input  ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
+; J18      ; 362        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; J19      ;            ;          ; GND                                            ; gnd    ;                       ;         ; --         ;                 ; --       ; --           ;
 ; J20      ; 373        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; J21      ; 327        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -645,8 +647,8 @@ The pin-out file can be found in C:/LSD-Final/output_files/alarme.pin.
 ; K2       ; 37         ; 1B       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; K3       ;            ;          ; GND                                            ; gnd    ;                       ;         ; --         ;                 ; --       ; --           ;
 ; K4       ; 13         ; 1A       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
-; K5       ; 12         ; 1A       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
-; K6       ; 14         ; 1A       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
+; K5       ; 12         ; 1A       ; state_flag[5]                                  ; output ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
+; K6       ; 14         ; 1A       ; senha[1]                                       ; input  ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; K7       ;            ; 1A       ; VCCIO1A                                        ; power  ;                       ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; K8       ; 28         ; 1B       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; K9       ; 30         ; 1B       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -658,9 +660,9 @@ The pin-out file can be found in C:/LSD-Final/output_files/alarme.pin.
 ; K15      ; 358        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; K16      ;            ; 6        ; VCCIO6                                         ; power  ;                       ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; K17      ;            ; 6        ; VCCIO6                                         ; power  ;                       ; 2.5V    ; --         ;                 ; --       ; --           ;
-; K18      ; 360        ; 6        ; disparo                                        ; output ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
-; K19      ; 361        ; 6        ; state_flag[2]                                  ; output ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
-; K20      ; 363        ; 6        ; ativado                                        ; output ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
+; K18      ; 360        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
+; K19      ; 361        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
+; K20      ; 363        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; K21      ; 326        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; K22      ; 324        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; L1       ; 51         ; 1B       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -897,6 +899,9 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; state_flag[0] ; Incomplete set of assignments ;
 ; state_flag[1] ; Incomplete set of assignments ;
 ; state_flag[2] ; Incomplete set of assignments ;
+; state_flag[3] ; Incomplete set of assignments ;
+; state_flag[4] ; Incomplete set of assignments ;
+; state_flag[5] ; Incomplete set of assignments ;
 ; intrusao      ; Incomplete set of assignments ;
 ; enter         ; Incomplete set of assignments ;
 ; senha[0]      ; Incomplete set of assignments ;
@@ -910,6 +915,9 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; state_flag[0] ; Missing location assignment   ;
 ; state_flag[1] ; Missing location assignment   ;
 ; state_flag[2] ; Missing location assignment   ;
+; state_flag[3] ; Missing location assignment   ;
+; state_flag[4] ; Missing location assignment   ;
+; state_flag[5] ; Missing location assignment   ;
 ; intrusao      ; Missing location assignment   ;
 ; enter         ; Missing location assignment   ;
 ; senha[0]      ; Missing location assignment   ;
@@ -926,7 +934,7 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +---------------------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+------------------------------------------+---------------+--------------+
 ; Compilation Hierarchy Node            ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; ADC blocks ; Full Hierarchy Name                      ; Entity Name   ; Library Name ;
 +---------------------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+------------------------------------------+---------------+--------------+
-; |alarme                               ; 44 (13)     ; 25 (6)                    ; 0 (0)         ; 0           ; 0    ; 1          ; 0            ; 0       ; 0         ; 13   ; 0            ; 19 (7)       ; 0 (0)             ; 25 (6)           ; 0          ; |alarme                                  ; alarme        ; work         ;
+; |alarme                               ; 42 (11)     ; 25 (6)                    ; 0 (0)         ; 0           ; 0    ; 1          ; 0            ; 0       ; 0         ; 16   ; 0            ; 17 (5)       ; 0 (0)             ; 25 (6)           ; 0          ; |alarme                                  ; alarme        ; work         ;
 ;    |clock_divider:instancia_clk100Hz| ; 31 (31)     ; 19 (19)                   ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 19 (19)          ; 0          ; |alarme|clock_divider:instancia_clk100Hz ; clock_divider ; work         ;
 +---------------------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+------------------------------------------+---------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -942,11 +950,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; state_flag[0] ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; state_flag[1] ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; state_flag[2] ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; intrusao      ; Input    ; --            ; (6) 873 ps    ; --                    ; --  ; --   ;
-; enter         ; Input    ; --            ; (6) 873 ps    ; --                    ; --  ; --   ;
+; state_flag[3] ; Output   ; --            ; --            ; --                    ; --  ; --   ;
+; state_flag[4] ; Output   ; --            ; --            ; --                    ; --  ; --   ;
+; state_flag[5] ; Output   ; --            ; --            ; --                    ; --  ; --   ;
+; intrusao      ; Input    ; (6) 873 ps    ; --            ; --                    ; --  ; --   ;
+; enter         ; Input    ; (6) 873 ps    ; --            ; --                    ; --  ; --   ;
 ; senha[0]      ; Input    ; (6) 873 ps    ; --            ; --                    ; --  ; --   ;
 ; senha[1]      ; Input    ; (6) 873 ps    ; --            ; --                    ; --  ; --   ;
-; senha[3]      ; Input    ; (6) 873 ps    ; --            ; --                    ; --  ; --   ;
+; senha[3]      ; Input    ; --            ; (6) 873 ps    ; --                    ; --  ; --   ;
 ; senha[2]      ; Input    ; (6) 873 ps    ; --            ; --                    ; --  ; --   ;
 ; reset         ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
 ; CLOCK         ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
@@ -959,23 +970,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Source Pin / Fanout             ; Pad To Core Index ; Setting ;
 +---------------------------------+-------------------+---------+
 ; intrusao                        ;                   ;         ;
-;      - Selector4~0              ; 1                 ; 6       ;
-;      - Selector2~1              ; 1                 ; 6       ;
+;      - Selector4~0              ; 0                 ; 6       ;
+;      - Selector2~1              ; 0                 ; 6       ;
 ; enter                           ;                   ;         ;
-;      - s_atual.senha_armar      ; 1                 ; 6       ;
-;      - s_atual.senha_desarmar   ; 1                 ; 6       ;
-;      - s_atual.desarmar_disparo ; 1                 ; 6       ;
-;      - Selector4~0              ; 1                 ; 6       ;
-;      - Selector4~1              ; 1                 ; 6       ;
-;      - Selector0~1              ; 1                 ; 6       ;
-;      - Selector2~0              ; 1                 ; 6       ;
-;      - Selector2~1              ; 1                 ; 6       ;
+;      - s_atual.senha_armar      ; 0                 ; 6       ;
+;      - s_atual.senha_desarmar   ; 0                 ; 6       ;
+;      - s_atual.desarmar_disparo ; 0                 ; 6       ;
+;      - Selector4~0              ; 0                 ; 6       ;
+;      - Selector4~1              ; 0                 ; 6       ;
+;      - Selector0~1              ; 0                 ; 6       ;
+;      - Selector2~0              ; 0                 ; 6       ;
+;      - Selector2~1              ; 0                 ; 6       ;
 ; senha[0]                        ;                   ;         ;
 ;      - process_0~0              ; 0                 ; 6       ;
 ; senha[1]                        ;                   ;         ;
 ;      - process_0~0              ; 0                 ; 6       ;
 ; senha[3]                        ;                   ;         ;
-;      - process_0~0              ; 0                 ; 6       ;
+;      - process_0~0              ; 1                 ; 6       ;
 ; senha[2]                        ;                   ;         ;
 ;      - process_0~0              ; 0                 ; 6       ;
 ; reset                           ;                   ;         ;
@@ -983,27 +994,27 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------+-------------------+---------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                                                    ;
-+-------------------------------------------+----------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; Name                                      ; Location       ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+-------------------------------------------+----------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; CLOCK                                     ; PIN_M8         ; 19      ; Clock        ; yes    ; Global Clock         ; GCLK3            ; --                        ;
-; clock_divider:instancia_clk100Hz|temporal ; FF_X77_Y40_N23 ; 6       ; Clock        ; yes    ; Global Clock         ; GCLK7            ; --                        ;
-; enter                                     ; PIN_B21        ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; reset                                     ; PIN_M9         ; 6       ; Async. clear ; yes    ; Global Clock         ; GCLK1            ; --                        ;
-+-------------------------------------------+----------------+---------+--------------+--------+----------------------+------------------+---------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                                   ;
++-------------------------------------------+---------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; Name                                      ; Location      ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++-------------------------------------------+---------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; CLOCK                                     ; PIN_M8        ; 19      ; Clock        ; yes    ; Global Clock         ; GCLK3            ; --                        ;
+; clock_divider:instancia_clk100Hz|temporal ; FF_X45_Y2_N29 ; 6       ; Clock        ; yes    ; Global Clock         ; GCLK15           ; --                        ;
+; enter                                     ; PIN_J8        ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; reset                                     ; PIN_M9        ; 6       ; Async. clear ; yes    ; Global Clock         ; GCLK1            ; --                        ;
++-------------------------------------------+---------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Global & Other Fast Signals                                                                                                                                                       ;
-+-------------------------------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; Name                                      ; Location       ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+-------------------------------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; CLOCK                                     ; PIN_M8         ; 19      ; 0                                    ; Global Clock         ; GCLK3            ; --                        ;
-; clock_divider:instancia_clk100Hz|temporal ; FF_X77_Y40_N23 ; 6       ; 0                                    ; Global Clock         ; GCLK7            ; --                        ;
-; reset                                     ; PIN_M9         ; 6       ; 0                                    ; Global Clock         ; GCLK1            ; --                        ;
-+-------------------------------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Global & Other Fast Signals                                                                                                                                                      ;
++-------------------------------------------+---------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; Name                                      ; Location      ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++-------------------------------------------+---------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; CLOCK                                     ; PIN_M8        ; 19      ; 0                                    ; Global Clock         ; GCLK3            ; --                        ;
+; clock_divider:instancia_clk100Hz|temporal ; FF_X45_Y2_N29 ; 6       ; 0                                    ; Global Clock         ; GCLK15           ; --                        ;
+; reset                                     ; PIN_M9        ; 6       ; 0                                    ; Global Clock         ; GCLK1            ; --                        ;
++-------------------------------------------+---------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
 +------------------------------------------------+
@@ -1011,22 +1022,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+------------------------+
 ; Routing Resource Type ; Usage                  ;
 +-----------------------+------------------------+
-; Block interconnects   ; 32 / 148,641 ( < 1 % ) ;
-; C16 interconnects     ; 1 / 5,382 ( < 1 % )    ;
-; C4 interconnects      ; 27 / 106,704 ( < 1 % ) ;
-; Direct links          ; 8 / 148,641 ( < 1 % )  ;
+; Block interconnects   ; 37 / 148,641 ( < 1 % ) ;
+; C16 interconnects     ; 2 / 5,382 ( < 1 % )    ;
+; C4 interconnects      ; 28 / 106,704 ( < 1 % ) ;
+; Direct links          ; 9 / 148,641 ( < 1 % )  ;
 ; Global clocks         ; 3 / 20 ( 15 % )        ;
 ; Local interconnects   ; 38 / 49,760 ( < 1 % )  ;
 ; NSLEEPs               ; 0 / 500 ( 0 % )        ;
-; R24 interconnects     ; 0 / 5,406 ( 0 % )      ;
-; R4 interconnects      ; 3 / 147,764 ( < 1 % )  ;
+; R24 interconnects     ; 1 / 5,406 ( < 1 % )    ;
+; R4 interconnects      ; 9 / 147,764 ( < 1 % )  ;
 +-----------------------+------------------------+
 
 
 +---------------------------------------------------------------------------+
 ; LAB Logic Elements                                                        ;
 +---------------------------------------------+-----------------------------+
-; Number of Logic Elements  (Average = 11.00) ; Number of LABs  (Total = 4) ;
+; Number of Logic Elements  (Average = 10.50) ; Number of LABs  (Total = 4) ;
 +---------------------------------------------+-----------------------------+
 ; 1                                           ; 1                           ;
 ; 2                                           ; 0                           ;
@@ -1037,9 +1048,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 7                                           ; 0                           ;
 ; 8                                           ; 0                           ;
 ; 9                                           ; 0                           ;
-; 10                                          ; 0                           ;
+; 10                                          ; 1                           ;
 ; 11                                          ; 0                           ;
-; 12                                          ; 1                           ;
+; 12                                          ; 0                           ;
 ; 13                                          ; 0                           ;
 ; 14                                          ; 0                           ;
 ; 15                                          ; 1                           ;
@@ -1061,7 +1072,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                        ;
 +----------------------------------------------+-----------------------------+
-; Number of Signals Sourced  (Average = 17.25) ; Number of LABs  (Total = 4) ;
+; Number of Signals Sourced  (Average = 16.75) ; Number of LABs  (Total = 4) ;
 +----------------------------------------------+-----------------------------+
 ; 0                                            ; 0                           ;
 ; 1                                            ; 1                           ;
@@ -1079,9 +1090,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 13                                           ; 0                           ;
 ; 14                                           ; 0                           ;
 ; 15                                           ; 0                           ;
-; 16                                           ; 0                           ;
+; 16                                           ; 1                           ;
 ; 17                                           ; 0                           ;
-; 18                                           ; 1                           ;
+; 18                                           ; 0                           ;
 ; 19                                           ; 0                           ;
 ; 20                                           ; 0                           ;
 ; 21                                           ; 0                           ;
@@ -1096,15 +1107,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                       ;
 +-------------------------------------------------+-----------------------------+
-; Number of Signals Sourced Out  (Average = 3.25) ; Number of LABs  (Total = 4) ;
+; Number of Signals Sourced Out  (Average = 4.25) ; Number of LABs  (Total = 4) ;
 +-------------------------------------------------+-----------------------------+
 ; 0                                               ; 0                           ;
 ; 1                                               ; 1                           ;
 ; 2                                               ; 1                           ;
 ; 3                                               ; 0                           ;
-; 4                                               ; 1                           ;
+; 4                                               ; 0                           ;
 ; 5                                               ; 0                           ;
 ; 6                                               ; 1                           ;
+; 7                                               ; 0                           ;
+; 8                                               ; 1                           ;
 +-------------------------------------------------+-----------------------------+
 
 
@@ -1182,15 +1195,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
 ; Pin/Rules          ; IO_000001    ; IO_000002    ; IO_000003    ; IO_000004    ; IO_000005    ; IO_000006 ; IO_000007    ; IO_000008    ; IO_000009 ; IO_000010 ; IO_000011    ; IO_000012    ; IO_000013    ; IO_000014    ; IO_000015    ; IO_000018    ; IO_000019    ; IO_000020    ; IO_000021    ; IO_000022    ; IO_000023    ; IO_000024    ; IO_000026    ; IO_000027    ; IO_000045    ; IO_000046    ; IO_000047    ; IO_000033 ; IO_000034    ; IO_000042    ;
 +--------------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
-; Total Pass         ; 0            ; 0            ; 0            ; 0            ; 0            ; 13        ; 0            ; 0            ; 13        ; 13        ; 0            ; 5            ; 0            ; 0            ; 8            ; 0            ; 5            ; 8            ; 0            ; 0            ; 0            ; 5            ; 0            ; 0            ; 0            ; 0            ; 0            ; 13        ; 0            ; 0            ;
+; Total Pass         ; 0            ; 0            ; 0            ; 0            ; 0            ; 16        ; 0            ; 0            ; 16        ; 16        ; 0            ; 8            ; 0            ; 0            ; 8            ; 0            ; 8            ; 8            ; 0            ; 0            ; 0            ; 8            ; 0            ; 0            ; 0            ; 0            ; 0            ; 16        ; 0            ; 0            ;
 ; Total Unchecked    ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ;
-; Total Inapplicable ; 13           ; 13           ; 13           ; 13           ; 13           ; 0         ; 13           ; 13           ; 0         ; 0         ; 13           ; 8            ; 13           ; 13           ; 5            ; 13           ; 8            ; 5            ; 13           ; 13           ; 13           ; 8            ; 13           ; 13           ; 13           ; 13           ; 13           ; 0         ; 13           ; 13           ;
+; Total Inapplicable ; 16           ; 16           ; 16           ; 16           ; 16           ; 0         ; 16           ; 16           ; 0         ; 0         ; 16           ; 8            ; 16           ; 16           ; 8            ; 16           ; 8            ; 8            ; 16           ; 16           ; 16           ; 8            ; 16           ; 16           ; 16           ; 16           ; 16           ; 0         ; 16           ; 16           ;
 ; Total Fail         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ;
 ; disparo            ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; ativado            ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; state_flag[0]      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; state_flag[1]      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; state_flag[2]      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; state_flag[3]      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; state_flag[4]      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; state_flag[5]      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; intrusao           ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; enter              ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; senha[0]           ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
@@ -1244,7 +1260,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------+----------------------+-------------------+
 ; Source Clock(s) ; Destination Clock(s) ; Delay Added in ns ;
 +-----------------+----------------------+-------------------+
-; CLOCK           ; CLOCK                ; 4.6               ;
+; CLOCK           ; CLOCK                ; 5.1               ;
 +-----------------+----------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the Timing Analyzer.
@@ -1255,25 +1271,25 @@ This will disable optimization of problematic paths and expose them for further 
 +----------------------------------------------+-------------------------------------------+-------------------+
 ; Source Register                              ; Destination Register                      ; Delay Added in ns ;
 +----------------------------------------------+-------------------------------------------+-------------------+
-; clock_divider:instancia_clk100Hz|temporal    ; clock_divider:instancia_clk100Hz|temporal ; 4.560             ;
-; clock_divider:instancia_clk100Hz|counter[12] ; clock_divider:instancia_clk100Hz|temporal ; 1.773             ;
-; clock_divider:instancia_clk100Hz|counter[11] ; clock_divider:instancia_clk100Hz|temporal ; 1.773             ;
-; clock_divider:instancia_clk100Hz|counter[10] ; clock_divider:instancia_clk100Hz|temporal ; 1.773             ;
-; clock_divider:instancia_clk100Hz|counter[9]  ; clock_divider:instancia_clk100Hz|temporal ; 1.773             ;
-; clock_divider:instancia_clk100Hz|counter[8]  ; clock_divider:instancia_clk100Hz|temporal ; 1.773             ;
-; clock_divider:instancia_clk100Hz|counter[15] ; clock_divider:instancia_clk100Hz|temporal ; 1.773             ;
-; clock_divider:instancia_clk100Hz|counter[14] ; clock_divider:instancia_clk100Hz|temporal ; 1.773             ;
-; clock_divider:instancia_clk100Hz|counter[16] ; clock_divider:instancia_clk100Hz|temporal ; 1.773             ;
-; clock_divider:instancia_clk100Hz|counter[17] ; clock_divider:instancia_clk100Hz|temporal ; 1.773             ;
-; clock_divider:instancia_clk100Hz|counter[7]  ; clock_divider:instancia_clk100Hz|temporal ; 1.773             ;
-; clock_divider:instancia_clk100Hz|counter[6]  ; clock_divider:instancia_clk100Hz|temporal ; 1.773             ;
-; clock_divider:instancia_clk100Hz|counter[5]  ; clock_divider:instancia_clk100Hz|temporal ; 1.773             ;
-; clock_divider:instancia_clk100Hz|counter[13] ; clock_divider:instancia_clk100Hz|temporal ; 1.773             ;
-; clock_divider:instancia_clk100Hz|counter[4]  ; clock_divider:instancia_clk100Hz|temporal ; 1.773             ;
-; clock_divider:instancia_clk100Hz|counter[3]  ; clock_divider:instancia_clk100Hz|temporal ; 1.773             ;
-; clock_divider:instancia_clk100Hz|counter[2]  ; clock_divider:instancia_clk100Hz|temporal ; 1.773             ;
-; clock_divider:instancia_clk100Hz|counter[1]  ; clock_divider:instancia_clk100Hz|temporal ; 1.773             ;
-; clock_divider:instancia_clk100Hz|counter[0]  ; clock_divider:instancia_clk100Hz|temporal ; 1.773             ;
+; clock_divider:instancia_clk100Hz|temporal    ; clock_divider:instancia_clk100Hz|temporal ; 5.091             ;
+; clock_divider:instancia_clk100Hz|counter[12] ; clock_divider:instancia_clk100Hz|temporal ; 1.853             ;
+; clock_divider:instancia_clk100Hz|counter[11] ; clock_divider:instancia_clk100Hz|temporal ; 1.853             ;
+; clock_divider:instancia_clk100Hz|counter[10] ; clock_divider:instancia_clk100Hz|temporal ; 1.853             ;
+; clock_divider:instancia_clk100Hz|counter[9]  ; clock_divider:instancia_clk100Hz|temporal ; 1.853             ;
+; clock_divider:instancia_clk100Hz|counter[8]  ; clock_divider:instancia_clk100Hz|temporal ; 1.853             ;
+; clock_divider:instancia_clk100Hz|counter[15] ; clock_divider:instancia_clk100Hz|temporal ; 1.853             ;
+; clock_divider:instancia_clk100Hz|counter[14] ; clock_divider:instancia_clk100Hz|temporal ; 1.853             ;
+; clock_divider:instancia_clk100Hz|counter[16] ; clock_divider:instancia_clk100Hz|temporal ; 1.853             ;
+; clock_divider:instancia_clk100Hz|counter[17] ; clock_divider:instancia_clk100Hz|temporal ; 1.853             ;
+; clock_divider:instancia_clk100Hz|counter[7]  ; clock_divider:instancia_clk100Hz|temporal ; 1.853             ;
+; clock_divider:instancia_clk100Hz|counter[6]  ; clock_divider:instancia_clk100Hz|temporal ; 1.853             ;
+; clock_divider:instancia_clk100Hz|counter[5]  ; clock_divider:instancia_clk100Hz|temporal ; 1.853             ;
+; clock_divider:instancia_clk100Hz|counter[13] ; clock_divider:instancia_clk100Hz|temporal ; 1.853             ;
+; clock_divider:instancia_clk100Hz|counter[4]  ; clock_divider:instancia_clk100Hz|temporal ; 1.853             ;
+; clock_divider:instancia_clk100Hz|counter[3]  ; clock_divider:instancia_clk100Hz|temporal ; 1.853             ;
+; clock_divider:instancia_clk100Hz|counter[2]  ; clock_divider:instancia_clk100Hz|temporal ; 1.853             ;
+; clock_divider:instancia_clk100Hz|counter[1]  ; clock_divider:instancia_clk100Hz|temporal ; 1.853             ;
+; clock_divider:instancia_clk100Hz|counter[0]  ; clock_divider:instancia_clk100Hz|temporal ; 1.853             ;
 +----------------------------------------------+-------------------------------------------+-------------------+
 Note: This table only shows the top 19 path(s) that have the largest delay added for hold.
 
@@ -1316,7 +1332,7 @@ Info (12825): Data[1]/ASDO dual-purpose pin not reserved
 Info (12825): nCSO dual-purpose pin not reserved
 Info (12825): DCLK dual-purpose pin not reserved
 Warning (15714): Some pins have incomplete I/O assignments. Refer to the I/O Assignment Warnings report for details
-Critical Warning (169085): No exact pin location assignment(s) for 13 pins of 13 total pins. For the list of pins please refer to the I/O Assignment Warnings table in the fitter report.
+Critical Warning (169085): No exact pin location assignment(s) for 16 pins of 16 total pins. For the list of pins please refer to the I/O Assignment Warnings table in the fitter report.
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'alarme.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332144): No user constrained base clocks found in the design
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
@@ -1334,7 +1350,7 @@ Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
 Info (176214): Statistics of I/O pins that need to be placed that use the same VCCIO and VREF, before I/O pin placement
-    Info (176211): Number of I/O pins in group: 11 (unused VREF, 2.5V VCCIO, 6 input, 5 output, 0 bidirectional)
+    Info (176211): Number of I/O pins in group: 14 (unused VREF, 2.5V VCCIO, 6 input, 8 output, 0 bidirectional)
         Info (176212): I/O standards used: 2.5 V.
 Info (176215): I/O bank details before I/O pin placement
     Info (176214): Statistics of I/O banks
@@ -1347,20 +1363,20 @@ Info (176215): I/O bank details before I/O pin placement
         Info (176213): I/O bank number 6 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  60 pins available
         Info (176213): I/O bank number 7 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  52 pins available
         Info (176213): I/O bank number 8 does not use VREF pins and has undetermined VCCIO pins. 4 total pin(s) used --  32 pins available
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:02
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:01
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X67_Y33 to location X78_Y43
+    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X0_Y33 to location X10_Y43
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
-Info (11888): Total time spent on timing analysis during the Fitter is 0.12 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.10 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -1368,10 +1384,10 @@ Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Info (144001): Generated suppressed messages file C:/LSD-Final/output_files/alarme.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 5642 megabytes
-    Info: Processing ended: Mon Jul 11 20:30:49 2022
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:11
+    Info: Peak virtual memory: 5638 megabytes
+    Info: Processing ended: Mon Jul 11 20:38:30 2022
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:10
 
 
 +----------------------------+

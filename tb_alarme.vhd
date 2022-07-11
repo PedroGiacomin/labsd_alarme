@@ -17,7 +17,7 @@ component alarme is
         senha   : in    std_logic_vector(3 downto 0); -- sinal de senha
         enter, intrusao 	: in    std_logic; -- sinais de entrada externos
         disparo, ativado	: out   std_logic;  -- sinais de saida externos
-		state_flag			: out   std_logic_vector(2 downto 0)	
+		state_flag			: out   std_logic_vector(5 downto 0)	
 	 );
 end component;
 
@@ -35,7 +35,7 @@ end component;
     signal disparo_out, ativado_out : std_logic;
     signal clk : std_logic;
     signal rst : std_logic;
-    signal state_flag_out : std_logic_vector(2 downto 0);
+    signal state_flag_out : std_logic_vector(5 downto 0);
 
     -- Teste do clock
     signal clk100Hz    :   std_logic;   -- Sinal de clock corrigido
@@ -114,7 +114,7 @@ read_inputs_data_in:process
 write_outputs:process
 	    variable linea  : line;
         variable output :   std_logic;
-		variable output_vector : std_logic_vector(2 downto 0);  
+		variable output_vector : std_logic_vector(5 downto 0);  
 	begin
         write(linea,string'("ativado disparo state_flag"));
         writeline(outputs,linea);
@@ -125,7 +125,7 @@ write_outputs:process
                 output := disparo_out;
 				write(linea,output,right, 10);
                 output_vector := state_flag_out;
-				write(linea,output_vector,right, 10);
+				write(linea,output_vector,right, 15);
 				writeline(outputs,linea);
 			wait for PERIOD * 500000;
 		end loop; 

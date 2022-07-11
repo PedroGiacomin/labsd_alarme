@@ -1,1 +1,6 @@
-db/
+# ignora tudo menos os vhd e txt
+
+*
+
+!*.vhd
+!*.txt
