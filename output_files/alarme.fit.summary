@@ -1,14 +1,14 @@
-Fitter Status : Successful - Sun Jul 10 19:14:35 2022
+Fitter Status : Successful - Mon Jul 11 20:30:48 2022
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : alarme
 Top-level Entity Name : alarme
 Family : MAX 10
 Device : 10M50DAF484C7G
 Timing Models : Final
-Total logic elements : 13 / 49,760 ( < 1 % )
-    Total combinational functions : 13 / 49,760 ( < 1 % )
-    Dedicated logic registers : 6 / 49,760 ( < 1 % )
-Total registers : 6
+Total logic elements : 44 / 49,760 ( < 1 % )
+    Total combinational functions : 44 / 49,760 ( < 1 % )
+    Dedicated logic registers : 25 / 49,760 ( < 1 % )
+Total registers : 25
 Total pins : 13 / 360 ( 4 % )
 Total virtual pins : 0
 Total memory bits : 0 / 1,677,312 ( 0 % )

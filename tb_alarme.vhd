@@ -21,6 +21,13 @@ component alarme is
 	 );
 end component;
 
+component clock_divider is
+    port(
+        clk_in	:   in	std_logic;
+        clk_out	:	out std_logic
+    );
+end component;
+
     -- Declaracao dos sinais usados no tb
     signal senha_in  : std_logic_vector(3 downto 0);
     signal enter_in : std_logic;
@@ -29,6 +36,9 @@ end component;
     signal clk : std_logic;
     signal rst : std_logic;
     signal state_flag_out : std_logic_vector(2 downto 0);
+
+    -- Teste do clock
+    signal clk100Hz    :   std_logic;   -- Sinal de clock corrigido
 
     -- Flags de I/O
     signal read_data_in    : std_logic:='0';
@@ -55,6 +65,8 @@ instancia_alarme : alarme
             RESET           =>  rst, 
             state_flag      =>  state_flag_out);
 
+instancia_clk100Hz :   clock_divider port map (clk_in  =>  clk,  clk_out =>  clk100Hz);
+
 ------------------------------------------------------------------------------------
 ----------------- processo para gerar o sinal de clock 
 ------------------------------------------------------------------------------------		
@@ -80,7 +92,7 @@ read_inputs_data_in:process
 	
     begin
         readline(inputs_data_in, linea);    -- le a primeira linha e ignora
-        wait until falling_edge(clk);       -- espera a borda de descida do clock
+        wait until falling_edge(clk100Hz);       -- espera a borda de descida do clock
         while not endfile(inputs_data_in) loop
                     readline(inputs_data_in, linea);   -- guarda a linha na var 'linea'
                     read(linea,input);   -- le o bit do enter
@@ -91,7 +103,7 @@ read_inputs_data_in:process
                     read(linea, v_SPACE);
                     read(linea,input);   -- le o bit da intrusao
                     intrusao_in <= input; 
-			    wait for PERIOD;    -- espera um periodo de clock antes de ler outra linha
+			    wait for PERIOD * 500000;    -- espera um periodo de clk100Hz antes de ler outra linha
         end loop;
 	end process read_inputs_data_in;	
     
@@ -106,7 +118,7 @@ write_outputs:process
 	begin
         write(linea,string'("ativado disparo state_flag"));
         writeline(outputs,linea);
-	    wait until falling_edge(clk);       -- espera a borda de descida do clock
+	    wait until falling_edge(clk100Hz);       -- espera a borda de descida do clock
 		while true loop
 				output := ativado_out;
 				write(linea,output);
@@ -115,7 +127,7 @@ write_outputs:process
                 output_vector := state_flag_out;
 				write(linea,output_vector,right, 10);
 				writeline(outputs,linea);
-			wait for PERIOD;
+			wait for PERIOD * 500000;
 		end loop; 
 	end process write_outputs;   	
 

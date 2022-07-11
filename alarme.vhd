@@ -11,12 +11,12 @@ use ieee.std_logic_1164.all;
 
 entity alarme is
     port (
-        RESET   : in    std_logic; -- reset input
+        reset   : in    std_logic; -- reset input
         CLOCK   : in    std_logic; -- clock input
         senha   : in    std_logic_vector(3 downto 0);
-        enter, intrusao 	: in    std_logic; -- sinais de entrada externos
-        disparo, ativado	: out   std_logic;  -- sinais de saida externos
-		state_flag			: out	  std_logic_vector(2 downto 0)	-- flag de estado
+        enter, intrusao 	: in    std_logic;  -- sinais de entrada externos
+        disparo, ativado	: out   std_logic;  -- sinais de saida externos 
+		state_flag			: out	  std_logic_vector(2 downto 0)	-- flag de estado   
     );
 end alarme;
 
@@ -30,11 +30,20 @@ architecture arch of alarme is
     end component;
 	signal senha_correta  :  std_logic; -- sinal de senha_correta
 
+    component clock_divider is
+        port(
+            clk_in	:   in	std_logic;
+            clk_out	:	out std_logic
+        );
+    end component;
+    signal clk100Hz    :   std_logic;   -- Sinal de clock corrigido
+
 	type state_type is (desativado, senha_armar, ativar, senha_desarmar, disparar, desarmar_disparo);
 	signal s_atual, s_prox : state_type;
 
     begin
     compara_senha   :   comparador  port map (senha_correta_out =>  senha_correta, senha_in => senha);
+    instancia_clk100Hz :   clock_divider port map (clk_in  =>  CLOCK,  clk_out =>  clk100Hz);
 
     -- PROCESS DA FSM
 	process (enter, senha_correta, s_atual, intrusao)
@@ -122,12 +131,12 @@ architecture arch of alarme is
 
 	-- PROCESS DO CLOCK	
 	-- problema do clock eh fazer ele dar certo na placa
-	process (CLOCK, RESET)
+	process (clk100Hz, reset)
 		begin
 			-- No reset, volta para o S0 
 			if reset = '1' then
 				s_atual <= desativado;
-			elsif rising_edge(CLOCK) then
+			elsif rising_edge(clk100Hz) then
 				s_atual <= s_prox;
 			end if;
 		end process;
