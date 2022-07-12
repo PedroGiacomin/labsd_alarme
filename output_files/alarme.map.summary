@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Mon Jul 11 20:38:22 2022
+Analysis & Synthesis Status : Successful - Mon Jul 11 22:55:14 2022
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : alarme
 Top-level Entity Name : alarme
 Family : MAX 10
-Total logic elements : 43
-    Total combinational functions : 41
-    Dedicated logic registers : 25
-Total registers : 25
+Total logic elements : 47
+    Total combinational functions : 43
+    Dedicated logic registers : 29
+Total registers : 29
 Total pins : 16
 Total virtual pins : 0
 Total memory bits : 0

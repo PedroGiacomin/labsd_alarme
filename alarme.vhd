@@ -13,10 +13,10 @@ entity alarme is
     port (
         reset   : in    std_logic; -- reset input
         CLOCK   : in    std_logic; -- clock input
-        senha   : in    std_logic_vector(3 downto 0);
-        enter, intrusao 	: in    std_logic;  -- sinais de entrada externos
-        disparo, ativado	: out   std_logic;  -- sinais de saida externos 
-		state_flag			: out	  std_logic_vector(5 downto 0)	-- flag de estado   
+        senha   : in    std_logic_vector (3 downto 0);
+        botao_enter, botao_intrusao 	: in    std_logic;  -- sinais de entrada externos dos botoes
+        disparo, ativado	: out   std_logic;  -- sinais de saida externos buzzer e LED
+		state_flag			: out	  std_logic_vector(5 downto 0)	-- flag de estado  
     );
 end alarme;
 
@@ -28,7 +28,6 @@ architecture arch of alarme is
             senha_correta_out	:	out std_logic
         );
     end component;
-	signal senha_correta  :  std_logic; -- sinal de senha_correta
 
     component clock_divider is
         port(
@@ -36,10 +35,17 @@ architecture arch of alarme is
             clk_out	:	out std_logic
         );
     end component;
-    signal clk100Hz    :   std_logic;   -- Sinal de clock corrigido
-
+    
 	type state_type is (desativado, senha_armar, ativar, senha_desarmar, disparar, desarmar_disparo);
 	signal s_atual, s_prox : state_type;
+
+    signal clk100Hz    :   std_logic;   -- Sinal de clock corrigido
+    signal senha_correta  :  std_logic; -- sinal de senha_correta
+    signal enter        :   std_logic   :=  '0';    -- Sinal vindo do botao enter
+    signal intrusao     :   std_logic   :=  '0';    -- Sinal vindo do botao intrusao
+
+    signal last_botao_enter : std_logic   :=  '0';      -- Sinais auxiliares para detectar a borda do aperto do
+    signal last_botao_intrusao : std_logic   :=  '0';   -- botao
 
     begin
     compara_senha   :   comparador  port map (senha_correta_out =>  senha_correta, senha_in => senha);
@@ -124,13 +130,11 @@ architecture arch of alarme is
 						s_prox <= disparar;
 					else 
 						s_prox <= desarmar_disparo;
-					end if;
-				
+					end if;		
 			end case;
 		end process;
 
 	-- PROCESS DO CLOCK	
-	-- problema do clock eh fazer ele dar certo na placa
 	process (clk100Hz, reset)
 		begin
 			-- No reset, volta para o S0 
@@ -140,4 +144,32 @@ architecture arch of alarme is
 				s_atual <= s_prox;
 			end if;
 		end process;
+
+    -- PROCESSES DE APERTO DE BOTAO
+    detector_de_borda_enter:process(clk100Hz)
+        begin
+          if(rising_edge(clk100Hz)) then
+            if(botao_enter = '1' and last_botao_enter = '0') then     
+                enter <= '1';
+            else
+                enter <= '0';
+            end if;
+
+            last_botao_enter <= botao_enter;
+          end if;
+        end process;
+    
+    -- PROCESSES DE APERTO DE BOTAO
+    detector_de_borda_intrusao:process(clk100Hz)
+        begin
+        if(rising_edge(clk100Hz)) then
+            if(botao_intrusao = '1' and last_botao_intrusao = '0') then     
+                intrusao <= '1';
+            else
+                intrusao <= '0';
+            end if;
+
+            last_botao_intrusao <= botao_intrusao;
+        end if;
+        end process;
 end arch;

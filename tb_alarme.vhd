@@ -15,7 +15,7 @@ component alarme is
         RESET   : in    std_logic; -- reset input
         CLOCK   : in    std_logic; -- clock input
         senha   : in    std_logic_vector(3 downto 0); -- sinal de senha
-        enter, intrusao 	: in    std_logic; -- sinais de entrada externos
+        botao_enter, botao_intrusao 	: in    std_logic; -- sinais de entrada externos
         disparo, ativado	: out   std_logic;  -- sinais de saida externos
 		state_flag			: out   std_logic_vector(5 downto 0)	
 	 );
@@ -30,19 +30,15 @@ end component;
 
     -- Declaracao dos sinais usados no tb
     signal senha_in  : std_logic_vector(3 downto 0);
-    signal enter_in : std_logic;
-    signal intrusao_in : std_logic;
+    signal botao_enter_in : std_logic;
+    signal botao_intrusao_in : std_logic;
     signal disparo_out, ativado_out : std_logic;
     signal clk : std_logic;
     signal rst : std_logic;
     signal state_flag_out : std_logic_vector(5 downto 0);
 
     -- Teste do clock
-    signal clk100Hz    :   std_logic;   -- Sinal de clock corrigido
-
-    -- Flags de I/O
-    signal read_data_in    : std_logic:='0';
-   	signal flag_write      : std_logic:='0';   
+    signal clk100Hz    :   std_logic;   -- Sinal de clock corrigido   
 
     -- Arquivos de texto
    	file   inputs_data_in  : text open read_mode  is "data_in.txt";
@@ -56,9 +52,9 @@ end component;
 begin
     -- Instancia da UUT, no caso, o alarme de alarme.vhd
 instancia_alarme : alarme 
-    port map(enter          =>  enter_in, 
+    port map(botao_enter    =>  botao_enter_in, 
+            botao_intrusao  =>  botao_intrusao_in, 
             senha           =>  senha_in, 
-            intrusao        =>  intrusao_in, 
             disparo         =>  disparo_out, 
             ativado         =>  ativado_out, 
             CLOCK           =>  clk, 
@@ -92,18 +88,18 @@ read_inputs_data_in:process
 	
     begin
         readline(inputs_data_in, linea);    -- le a primeira linha e ignora
-        wait until falling_edge(clk100Hz);       -- espera a borda de descida do clock
+        wait until falling_edge(clk100Hz);         -- espera a borda de descida do clock
         while not endfile(inputs_data_in) loop
                     readline(inputs_data_in, linea);   -- guarda a linha na var 'linea'
-                    read(linea,input);   -- le o bit do enter
-                    enter_in <= input; 
-                    read(linea, v_SPACE);
-                    read(linea,input_vector);   -- le o bit do senha_correta
+                    read(linea,input_vector);   -- le os 4 bits de senha
                     senha_in <= input_vector; 
                     read(linea, v_SPACE);
+                    read(linea,input);   -- le o bit do enter
+                    botao_enter_in <= input; 
+                    read(linea, v_SPACE);
                     read(linea,input);   -- le o bit da intrusao
-                    intrusao_in <= input; 
-			    wait for PERIOD * 500000;    -- espera um periodo de clk100Hz antes de ler outra linha
+                    botao_intrusao_in <= input; 
+			    wait for 10 ms;    -- Os botoes sao apertados por um periodo de 0,023 s
         end loop;
 	end process read_inputs_data_in;	
     
@@ -127,7 +123,7 @@ write_outputs:process
                 output_vector := state_flag_out;
 				write(linea,output_vector,right, 15);
 				writeline(outputs,linea);
-			wait for PERIOD * 500000;
+			wait for 10 ms;
 		end loop; 
 	end process write_outputs;   	
 

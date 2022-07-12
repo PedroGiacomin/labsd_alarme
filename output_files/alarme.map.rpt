@@ -1,5 +1,5 @@
 Analysis & Synthesis report for alarme
-Mon Jul 11 20:38:22 2022
+Mon Jul 11 22:55:14 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -44,15 +44,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Jul 11 20:38:22 2022       ;
+; Analysis & Synthesis Status        ; Successful - Mon Jul 11 22:55:14 2022       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; alarme                                      ;
 ; Top-level Entity Name              ; alarme                                      ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 43                                          ;
-;     Total combinational functions  ; 41                                          ;
-;     Dedicated logic registers      ; 25                                          ;
-; Total registers                    ; 25                                          ;
+; Total logic elements               ; 47                                          ;
+;     Total combinational functions  ; 43                                          ;
+;     Dedicated logic registers      ; 29                                          ;
+; Total registers                    ; 29                                          ;
 ; Total pins                         ; 16                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -182,20 +182,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 43          ;
+; Estimated Total logic elements              ; 47          ;
 ;                                             ;             ;
-; Total combinational functions               ; 41          ;
+; Total combinational functions               ; 43          ;
 ; Logic element usage by number of LUT inputs ;             ;
 ;     -- 4 input functions                    ; 19          ;
 ;     -- 3 input functions                    ; 1           ;
-;     -- <=2 input functions                  ; 21          ;
+;     -- <=2 input functions                  ; 23          ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 24          ;
+;     -- normal mode                          ; 26          ;
 ;     -- arithmetic mode                      ; 17          ;
 ;                                             ;             ;
-; Total registers                             ; 25          ;
-;     -- Dedicated logic registers            ; 25          ;
+; Total registers                             ; 29          ;
+;     -- Dedicated logic registers            ; 29          ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
 ; I/O pins                                    ; 16          ;
@@ -204,7 +204,7 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;             ;
 ; Maximum fan-out node                        ; CLOCK~input ;
 ; Maximum fan-out                             ; 19          ;
-; Total fan-out                               ; 202         ;
+; Total fan-out                               ; 214         ;
 ; Average fan-out                             ; 2.06        ;
 +---------------------------------------------+-------------+
 
@@ -214,7 +214,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------+---------------+--------------+
 ; Compilation Hierarchy Node            ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                      ; Entity Name   ; Library Name ;
 +---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------+---------------+--------------+
-; |alarme                               ; 41 (10)             ; 25 (6)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 16   ; 0            ; 0          ; |alarme                                  ; alarme        ; work         ;
+; |alarme                               ; 43 (12)             ; 29 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 16   ; 0            ; 0          ; |alarme                                  ; alarme        ; work         ;
 ;    |clock_divider:instancia_clk100Hz| ; 31 (31)             ; 19 (19)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |alarme|clock_divider:instancia_clk100Hz ; clock_divider ; work         ;
 +---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------+---------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -240,7 +240,7 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 25    ;
+; Total registers                              ; 29    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 6     ;
@@ -256,21 +256,21 @@ Encoding Type:  One-Hot
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 16                          ;
-; cycloneiii_ff         ; 25                          ;
+; cycloneiii_ff         ; 29                          ;
 ;     CLR               ; 3                           ;
 ;     ENA CLR           ; 3                           ;
-;     plain             ; 19                          ;
-; cycloneiii_lcell_comb ; 43                          ;
+;     plain             ; 23                          ;
+; cycloneiii_lcell_comb ; 45                          ;
 ;     arith             ; 17                          ;
 ;         2 data inputs ; 17                          ;
-;     normal            ; 26                          ;
+;     normal            ; 28                          ;
 ;         1 data inputs ; 4                           ;
-;         2 data inputs ; 2                           ;
+;         2 data inputs ; 4                           ;
 ;         3 data inputs ; 1                           ;
 ;         4 data inputs ; 19                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 3.70                        ;
-; Average LUT depth     ; 2.74                        ;
+; Average LUT depth     ; 2.63                        ;
 +-----------------------+-----------------------------+
 
 
@@ -289,7 +289,7 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Mon Jul 11 20:38:13 2022
+    Info: Processing started: Mon Jul 11 22:55:06 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off alarme -c alarme
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -306,19 +306,19 @@ Info (12021): Found 2 design units, including 1 entities, in source file compara
     Info (12022): Found design unit 1: comparador-RTL File: C:/LSD-Final/comparador.vhd Line: 11
     Info (12023): Found entity 1: comparador File: C:/LSD-Final/comparador.vhd Line: 4
 Info (12127): Elaborating entity "alarme" for the top level hierarchy
-Info (12128): Elaborating entity "comparador" for hierarchy "comparador:compara_senha" File: C:/LSD-Final/alarme.vhd Line: 45
-Info (12128): Elaborating entity "clock_divider" for hierarchy "clock_divider:instancia_clk100Hz" File: C:/LSD-Final/alarme.vhd Line: 46
+Info (12128): Elaborating entity "comparador" for hierarchy "comparador:compara_senha" File: C:/LSD-Final/alarme.vhd Line: 51
+Info (12128): Elaborating entity "clock_divider" for hierarchy "clock_divider:instancia_clk100Hz" File: C:/LSD-Final/alarme.vhd Line: 52
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 59 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 63 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 8 input pins
     Info (21059): Implemented 8 output pins
-    Info (21061): Implemented 43 logic cells
+    Info (21061): Implemented 47 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4783 megabytes
-    Info: Processing ended: Mon Jul 11 20:38:22 2022
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:18
+    Info: Peak virtual memory: 4784 megabytes
+    Info: Processing ended: Mon Jul 11 22:55:14 2022
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:20
 
 
